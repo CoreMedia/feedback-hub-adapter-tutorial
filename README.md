@@ -44,89 +44,31 @@ mvn -f workspace-configuration/extensions com.coremedia.maven:extensions-maven-p
 
 - Rebuild the workspace
 
-## Implementation Steps
+## How To Read This Tutorial
 
-In the next section we are gonna explain which steps are are required to 
-implement you own Feedback Adapter. This adapter simply counts the amount of words
-you have used inside your articles `detailText` field. 
+There are two possibilities to implement your Feedback Hub extension, depending
+on your use case. This tutorial covers both cases in separate sections: 
 
-You can either clone this project and rename/refactor
-the corresponding classes and methods or you can start from scratch with your own modules.
-In any case, we assume that the `studio` and `studio-lib` modules have been setup properly.
-
-#### 1. Spring Configuration
-
-Assuming you haven't already done it, create a `resource` folder inside your
-`studio-lib` maven module with the corresponding `META-INF/spring.factories` file
-which points to you Spring configuration class. In our example, this class is 
-named `WordCounterConfiguration` and looks like this:
-
-```java
-@Configuration
-public class WordCounterConfiguration {
-
-  @Bean
-  public WordCounterFeedbackProviderFactory wordCounterFeedbackProviderFactory() {
-    return new WordCounterFeedbackProviderFactory();
-  }
-}
-``` 
-
-The Spring configuration only created the `WordCounterFeedbackProviderFactory`
-which is responsible for creating the actual `FeedbackProvider` instance.
-
-#### 2. FeedbackProviderFactory Implementation
-
-Next, we take a closer look on the `WordCounterFeedbackProviderFactory`.
-
-```java
-public class WordCounterFeedbackProviderFactory implements FeedbackProviderFactory<WordCounterSettings> {
-
-  @Override
-  public String getId() {
-    return "wordcounter";
-  }
-
-  @Override
-  public FeedbackProvider create(WordCounterSettings settings) {
-    return new WordCounterFeedbackProvider(settings);
-  }
-}
-```
-
-The class implements the interface `FeedbackProviderFactory` which requires
-the implementation of the methods 
-
-- `String getId()`: this methods return the unique id of this adapter and is used
-to match the content based configuration against the actual implementation
-- `FeedbackProvider create(T settings)`: this factory method creates the actual provider instance.
-The settings interface that is passed here contains additional fields that may have been set
-inside the `settings` struct of the adapter configuration. Usually credentials are passed
-to the provider this way. In our example, we use this interface to pass additional 
-configuration parameters:
-
-```java
-public interface WordCounterSettings {
-
-  /**
-   * Returns a comma separated list o words that are exluded from the word count.
-   */
-  String getIgnoreList();
-
-  /**
-   * Returns the amount of words the text should have.
-   */
-  Integer getTarget();
-}
-
-```
+**FeedbackHubAdapter**
+ 
+The Feedback Hub has predefined _FeedbackHubAdapters_. They offer some prefabrication
+to make the integration of similar services easier. One example for this
+is the _BlobKeywordsFeedbackHubAdapter_ which already gives us the blob the keywords 
+should be extracted from. Please check the documentation for the list of existing
+_FeedbackHubAdapters_. 
 
 
-#### 3. FeedbackProvider Implementation
-
-We now can care about the actual feedback implementation.
+Tutorial Link: **[Implementing a FeedbackAdapter](example_adapter.md)**
 
 
+
+**FeedbackProvider**
+
+The _FeedbackProvider_ interface is the general interface to implement for any
+kind of feedback. It does not offer any kind of prefabrication and can be used
+if none of the existing _FeedbackHubAdapters_ are applicable for your usecase.
+
+Tutorial Link: **[Implementing a FeedbackProvider](example_provider.md)**
 
 ## CoreMedia Labs
 

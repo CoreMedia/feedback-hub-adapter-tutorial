@@ -7,7 +7,7 @@ public class WordCounterFeedbackProviderFactory implements FeedbackProviderFacto
 
   @Override
   public String getId() {
-    return "wordcounter";
+    return "wordCountProvider";
   }
 
   @Override

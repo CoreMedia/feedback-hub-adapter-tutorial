@@ -45,7 +45,7 @@ public class WordCounterFeedbackProvider implements FeedbackProvider {
     //create feedback
     GaugeFeedbackItem gauge = GaugeFeedbackItem.builder()
             .withValue(percentage, settings.getTarget())
-            .withGaugeTitle("My Word Counter")
+            .withTitle("My Word Counter")
             .build();
 
     PercentageBarFeedbackItem scoreBar = PercentageBarFeedbackItem.builder()

@@ -6,7 +6,7 @@ to render text with a recursive font.
 
 ## Java Implementation
 
-All we have to do is implement the interface `FeedbackItem` for this:
+All we have to do, is to implement the interface `FeedbackItem` for this:
 
 ```java
 public class RecursiveTextFeedbackItem implements FeedbackItem {
@@ -39,28 +39,28 @@ public class RecursiveTextFeedbackItem implements FeedbackItem {
 }
 ```
 
-The interface does not require the implementation of any method, but we
+The interface does not require the implementation of any methods, but we
 override the `getType` method to have a simpler type name than the actual class name.
 Also, we provide the possibility to add the `FeedbackItem` to a specific collection
 by overriding the `getCollection` method.
 
 Within our provider or adapter, we can create a new `RecursiveTextFeedbackItem` 
-with the text we wont to render:
+with the text we want to render:
 
 ```java
 RecursiveTextFeedbackItem myItem = new RecursiveTextFeedbackItem("header", 
   "The amount of words is counted here");
 ```
 
-To make this example more interesting, we add the text to the reserved collection `header` 
+To make this example more interesting, we add the text to the reserved collection `header`, 
 which means that it will be rendered immediately after the title and before the sub tabs.
 
 ## AS/MXML Implementation
 
-On the client site, we have to implement the component that should be rendered
-for this new `FeedbackItem` type.
+On the client site, we have to implement the component that should render
+the new `FeedbackItem` type.
 
-In a first step, we have to implement a sub-component of class `FeedbackItemPanel`:
+First, we have to implement a sub-component of class `FeedbackItemPanel`:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -93,7 +93,7 @@ We also use the `getLabel` function which checks if the given text is a key insi
 and returns the localized label instead of using the original text.
 
 We finally have to tell the Feedback Hub about this panel by using the `feedbackService` instance.
-For this, we use the initialization of our Studio plugin:
+For this, we use the `initialize` method of our `FeedbackHubWordCounterStudioPlugin`:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>

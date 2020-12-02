@@ -16,7 +16,8 @@ If a project is inactive it means that the development has been discontinued and
 
 In this tutorial we are going to learn about how to use the CoreMedia Feedback Hub API.
 It explains step-by-step how to set up a new CoreMedia Extension for the Feedback Hub
-and how to build a new Feedback Hub adapter with the corresponding classes.
+and how to build a new Feedback Hub adapter or provider with the
+corresponding classes, localization, error handling, etc..
 
 ## Versioning
 
@@ -24,7 +25,7 @@ To find out which CoreMedia versions are supported by this project,
 please take look at the releases section or on the existing branches. 
 To find the matching version of your CoreMedia system, please checkout the branch 
 with the corresponding name. For example, 
-if your CoreMedia version is 2001.2, checkout the branch 2001.2.
+if your CoreMedia version is 2101.1, checkout the branch 2101.1.
 
 
 ## Project Setup

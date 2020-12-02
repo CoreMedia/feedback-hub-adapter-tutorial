@@ -1,11 +1,8 @@
 # Implementing a FeedbackProvider 
 
-In this tutorial we are gonna explain which steps are are required to 
-implement you own `FeedbackProvider`. The provider simply counts the amount of words
+In this tutorial we are gonna explain which steps are required to 
+implement you own `FeedbackProvider`. This provider will count the amount of words
 you have used inside your articles `detailText` field. 
-
-
-![Feedback Rendering](images/feedback_example_1.png "Feedback Rendering")
 
 You can either clone this project and rename/refactor
 the corresponding classes and methods or you can start from scratch with your own modules.
@@ -29,7 +26,7 @@ public class WordCounterConfiguration {
 }
 ``` 
 
-The Spring configuration only created the `WordCounterFeedbackProviderFactory`
+The Spring configuration creates the `WordCounterFeedbackProviderFactory`
 which is responsible for creating the actual `FeedbackProvider` instance.
 
 ## 2. FeedbackProviderFactory Implementation
@@ -66,7 +63,7 @@ configuration parameters:
 public interface WordCounterSettings {
 
   /**
-   * Returns a comma separated list o words that are exluded from the word count.
+   * Returns a comma separated list of words that are excluded from the word count.
    */
   String getIgnoreList();
 
@@ -80,7 +77,7 @@ public interface WordCounterSettings {
 
 ## 3. FeedbackProvider Implementation
 
-We can now care about the actual feedback implementation.
+Let's take a look on the actual feedback implementation:
 
 ```java
 @DefaultAnnotation(NonNull.class)
@@ -101,6 +98,8 @@ public class WordCounterFeedbackProvider implements FeedbackProvider {
 
     //calculate values
     List<String> exclusions = Arrays.asList(settings.getIgnoreList().split(","));
+
+    //count words, exclude words from the ignore list
     long wordCount = Stream.of(plainText.split(" ")).filter(f -> !exclusions.contains(f)).count();
     long percentage = wordCount * 100 / settings.getTarget();
 
@@ -149,25 +148,24 @@ public class WordCounterFeedbackProvider implements FeedbackProvider {
 }
 ```
 
-
-The implementation is quite simple: we extract the markup from the content,
-convert it to plaintext and split the text using whitespaces, but also
-exclude the words that are inside the ignore list that has been passed 
+In this example, we extract the markup from the content,
+convert it to plaintext and split the text using whitespaces. 
+We also exclude the words that are inside the ignore list that has been passed 
 as settings value.
 
 For the feedback we use different redundant `FeedbackItems` here,
 just to show what components are available. The settings value `target` determines
 the amount of words our article should have and therefore can be used to 
-calculate a percentage value how far the writing is progressed.
+calculate a percentage value of how far the writing is progressed.
 
 ## 4. Feedback Grouping
 
 The Feedback Hub supports the tabbed rendering of `FeedbackItems`.
-All you have to do is use the `withCollection` method which is supported 
+All you have to do is to use the `withCollection` method which is supported 
 by most `FeedbackItemBuilders`.
 For example, we could render the percentage based `FeedbackItems` on one tab
-and the count based scores on another by adding `.withCollection("tab1")` and
-`.withCollection("tab2")` to the builders. The result would look like this:
+and the number based scores on another by adding `.withCollection("tab1")` and
+`.withCollection("tab2")` to the corresponding builders. The result would look like this:
 
 
 ![Feedback Tabs](images/provider_tabbed_1.png "Feedback Tabs")
@@ -177,8 +175,8 @@ and the count based scores on another by adding `.withCollection("tab1")` and
 ## 5. Configuration
 
 We finally have to create a new `CMSettings` document
-in the site local or global "Feedback Hub" configuration folder. Below, you see
-an example of a matching configuration created for the the Blueprint Site "Chef Corp.". 
+within a site or within the global "Feedback Hub" configuration folder. Below, you see
+an example configuration created for the Blueprint Site "Chef Corp.". 
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -203,6 +201,11 @@ an example of a matching configuration created for the the Blueprint Site "Chef 
 </CMSettings>
 ```
 
+If everything is configured properly, the Feedback Hub window will have
+an additional tab with your Feedback Hub provider:
+
+![Feedback Rendering](images/feedback_example_1.png "Feedback Rendering")
+
 ## 6. Localization
 
 The localization of the Feedback Hub does not differ between
@@ -213,10 +216,10 @@ It is described in detail in section **[Localization](feedback_localization.md)*
 
 The overall exception handling inside the Feedback Hub does not differ between
 implementations of `FeedbackAdapter` and `FeedbackProvider`. 
-It is described in detail in section **[Exception Handling](exception_handling.md)**.
+It is described in detail in section **[Error Handling](error_handling.md)**.
 
 ## 8. Custom FeedbackItems
 
 If the existing `FeedbackItems` are not sufficient to render the desired feedback,
-we can implement custom `FeedbackItems` with custom components.
+you can implement custom `FeedbackItems`.
 An example for this is described in section **[Custom FeedbackItems](custom_feedback.md)**.

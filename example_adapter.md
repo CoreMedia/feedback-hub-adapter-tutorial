@@ -1,13 +1,11 @@
 # Implementing a FeedbackAdapter 
 
-In this tutorial we are gonna explain which steps are are required to 
-implement you own `FeedbackAdapter`. The adapter simply counts the amount of words
+In this tutorial we will show you which steps are are required to 
+implement your own `FeedbackAdapter`. This example adapter will count the amount of words
 you have used inside your articles `detailText` field. 
-For this we will implement the `TextFeedbackHubAdapter` which already extracts
+
+The implementation will use the `TextFeedbackHubAdapter` which already extracts
 text from content. 
-
-
-![Feedback Rendering](images/feedback_example_2.png "Feedback Rendering")
 
 You can either clone this project and rename/refactor
 the corresponding classes and methods or you can start from scratch with your own modules.
@@ -31,7 +29,7 @@ public class WordCounterConfiguration {
 }
 ``` 
 
-The Spring configuration only created the `WordCounterFeedbackAdapterFactory`
+The Spring configuration creates the `WordCounterFeedbackAdapterFactory`
 which is responsible for creating the actual `FeedbackAdapter` instance.
 
 ## 2. FeedbackHubAdapterFactory Implementation
@@ -54,12 +52,12 @@ public class WordCounterFeedbackAdapterFactory implements FeedbackHubAdapterFact
 ```
 
 The class implements the interface `FeedbackHubAdapterFactory` which requires
-the implementation of the methods 
+the implementation of the methods:
 
 - `String getId()`: this methods return the unique id of this adapter and is used
-to match the content based configuration against the actual implementation
+to match the content based configuration against the actual implementation.
 - `FeedbackHubAdapter create(T settings)`: this factory method creates the actual adapter instance.
-The settings interface that is passed here contains additional fields that may have been set
+The settings interface that is passed here, contains additional fields that may have been set
 inside the `settings` struct of the adapter configuration. Usually credentials are passed
 to the adapter this way. In our example, we use this interface to pass additional 
 configuration parameters:
@@ -68,7 +66,7 @@ configuration parameters:
 public interface WordCounterSettings {
 
   /**
-   * Returns a comma separated list o words that are exluded from the word count.
+   * Returns a comma separated list of words that are excluded from the word count.
    */
   String getIgnoreList();
 
@@ -82,7 +80,7 @@ public interface WordCounterSettings {
 
 ## 3. FeedbackAdapter Implementation
 
-We can now care about the actual feedback implementation.
+Let's take a look on the actual feedback implementation:
 
 ```java
 @DefaultAnnotation(NonNull.class)
@@ -98,6 +96,7 @@ public class WordCounterFeedbackAdapter implements TextFeedbackHubAdapter {
     String plainText = textProperties.values().stream().collect(Collectors.joining(" "));
     List<String> exclusions = Arrays.asList(settings.getIgnoreList().split(","));
 
+    //count words, exclude words from the ignore list
     long wordCount = Stream.of(plainText.split(" ")).filter(f -> !exclusions.contains(f)).count();
     long percentage = wordCount * 100 / settings.getTarget();
 
@@ -126,19 +125,18 @@ as settings value.
 
 The settings value `target` determines
 the amount of words our article should have and therefore can be used to 
-calculate a percentage value how far the writing is progressed.
-
+calculate a percentage value of how far the writing is progressed.
 
 Note that in this implementation, the source property that is used to 
-extract the markup is not hard coded as in the `FeedbackProvider` example,
-but can be set via settings parameter `sourceProperties`.
+extract the markup from, is not a hard coded value as in the `FeedbackProvider` example,
+but can be configured via the settings parameter `sourceProperties`.
 
 
 ## 4. Configuration
 
 We finally have to create a new `CMSettings` document
-in the site local or global "Feedback Hub" configuration folder. Below, you see
-an example of a matching configuration created for the the Blueprint Site "Chef Corp.". 
+within a site or within the global "Feedback Hub" configuration folder. Below, you see
+an example configuration created for the Blueprint Site "Chef Corp.". 
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -162,8 +160,12 @@ an example of a matching configuration created for the the Blueprint Site "Chef 
   </Struct></settings>
   <identifier></identifier>
 </CMSettings>
-
 ```
+
+If everything is configured properly, the Feedback Hub window will have
+an additional tab with your Feedback Hub adapter:
+
+![Feedback Rendering](images/feedback_example_2.png "Feedback Rendering")
 
 ## 5. Localization
 
@@ -175,10 +177,10 @@ It is described in detail in section **[Localization](feedback_localization.md)*
 
 The overall exception handling inside the Feedback Hub does not differ between
 implementations of `FeedbackAdapter` and `FeedbackProvider`. 
-It is described in detail in section **[Exception Handling](exception_handling.md)**.
+It is described in detail in section **[Error Handling](error_handling.md)**.
 
 ## 7. Custom FeedbackItems
 
 If the existing `FeedbackItems` are not sufficient to render the desired feedback,
-we can implement custom `FeedbackItems` with custom components.
+you can implement custom `FeedbackItems`.
 An example for this is described in section **[Custom FeedbackItems](custom_feedback.md)**.

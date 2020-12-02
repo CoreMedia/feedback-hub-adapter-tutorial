@@ -1,9 +1,9 @@
 # Localization
 
 When implementing a feedback source, an additional Studio Extension is required
-to provide resource bundles that are used to localize error messages and feedback labels.
+to provide at least a resource bundle that is used to localize error messages and feedback labels.
 
-Inside our Studio plugin, we have to copy our own resource bundle to the
+Inside our Studio plugin `FeedbackHubWordCounterStudioPlugin.mxml`, we copy our own resource bundle to the
 `com.coremedia.cms.studio.feedbackhub.FeedbackHub` bundle: 
 
 ```xml
@@ -18,8 +18,8 @@ Inside our Studio plugin, we have to copy our own resource bundle to the
 
 ## Main Tab Localization
 
-For the localization of the main tab just use the `factoryId` or your adapter
-or provider and use the suffixes `iconCls`, `title`, `tooltip` and `ariaLabel`
+For the localization of the main tab, we use the `factoryId` of our adapter
+or provider and append the suffixes `iconCls`, `title`, `tooltip` and `ariaLabel`
 for the corresponding component attributes:
 
 ```
@@ -58,9 +58,9 @@ The localized provider would look like this:
 ## FeedbackItem Localization
 
 For the labels and titles that are used for `FeedbackItems`, the Feedback
-Hub will always try to look up a corresponding value from 
+Hub will always try to look up the corresponding value from 
 the `com.coremedia.cms.studio.feedbackhub.FeedbackHub` resource bundle.
-For example, we can pass _word_count_label_ as label value for the score bar: 
+For example, we can pass "word_count_label" as label value for the score bar: 
 
 ```java
 ScoreBarFeedbackItem scoreBar = ScoreBarFeedbackItem.builder()

@@ -5,9 +5,9 @@ No matter if you choose to implement a `FeedbackAdapter` or
 
 ### Feedback Hub Error Codes
 
-First, you need to create an `enum` class which implements `FeedbackHubErrorCode`.
+First, you need to create an `enum` class which implements the interface `FeedbackHubErrorCode`.
 Inside this `enum`, you can declare error codes for all errors that might raise
-inside your provider or adapter. We stick with one common error code in our example:  
+inside your provider or adapter. For example, we could declare one common error code:  
 
 ```java
 enum WordCounterFeedbackHubErrorCode implements FeedbackHubErrorCode {
@@ -17,7 +17,7 @@ enum WordCounterFeedbackHubErrorCode implements FeedbackHubErrorCode {
 
 ### Error Codes for Adapters and Providers
 
-Inside our feedback calculation we then can use the error code by
+Inside our feedback calculation we then can use error codes by
 throwing a new `RuntimeException` of type `FeedbackHubException`.
 The exception does also take a collection of arguments as last argument.
 Here we can pass additional information that is later used in the localization of 
@@ -36,17 +36,18 @@ into one big `try/catch` block:
     }
   }
 ```
+We can also use this to show configuration errors to the user.
 
 ### Error Codes for Configuration Errors
 
 A good practice is to use `FeedbackHubException` to validate the
 configuration before creating the actual adapter or provider. This allows us
-to give a hint to the user that the configuration is not setup properly since 
-all errors are passed to the client. The best way of doing this is to check
+to give a hint to the user, that the configuration is not setup properly. 
+The best way of doing this is to check
 the corresponding settings implementation inside the `FeedbackProviderFactory`
 or `FeedbackHubAdapterFactory` class. 
 
-For our word counter example, we should check if a `target` value has been 
+For our word counter example, we can check if a `target` value has been 
 configured since otherwise, the graph calculation will fail:
 
 ```java
@@ -73,8 +74,8 @@ the following line to the `FeedbackHubWordCounterStudioPlugin.properties` of
 the `studio-client` module:
 
 ```
-wordcounter_WORD_COUNTER_COMMON_ERROR_CODE = An error occured during the execution of {0}: {1}
-wordcounter_TARGET_NOT_SET = 'target' property not set for adapter {0}
+wordCountProvider_WORD_COUNTER_COMMON_ERROR_CODE = An error occured during the execution of {0}: {1}
+wordCountProvider_TARGET_NOT_SET = 'target' property not set for adapter {0}
 ```
 
 Note that the first message contains two placeholders, although we only did pass

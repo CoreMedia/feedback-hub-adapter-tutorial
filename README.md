@@ -51,22 +51,19 @@ on your use case. This tutorial covers both cases in separate sections:
 
 **FeedbackHubAdapter**
  
-The Feedback Hub has predefined _FeedbackHubAdapters_. They offer some prefabrication
+The Feedback Hub has predefined `FeedbackHubAdapters`. They offer some prefabrication
 to make the integration of similar services easier. One example for this
-is the _BlobKeywordsFeedbackHubAdapter_ which already gives us the blob the keywords 
+is the `BlobKeywordsFeedbackHubAdapter` which already gives us the blob the keywords 
 should be extracted from. Please check the documentation for the list of existing
-_FeedbackHubAdapters_. 
-
+`FeedbackHubAdapters`. 
 
 Tutorial Link: **[Implementing a FeedbackAdapter](example_adapter.md)**
 
-
-
 **FeedbackProvider**
 
-The _FeedbackProvider_ interface is the general interface to implement for any
+The `FeedbackProvider` interface is the general interface to implement for any
 kind of feedback. It does not offer any kind of prefabrication and can be used
-if none of the existing _FeedbackHubAdapters_ are applicable for your usecase.
+if none of the existing `FeedbackHubAdapters` are applicable for your usecase.
 
 Tutorial Link: **[Implementing a FeedbackProvider](example_provider.md)**
 

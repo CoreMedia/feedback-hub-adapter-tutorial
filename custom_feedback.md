@@ -103,3 +103,9 @@ For this, we use the initialization of our Studio plugin:
   <editor:rules>
   ...
 ```
+
+Note that the value `recursiveText` matches the `getType` methods return value of
+our `RecursiveTextFeedbackItem.java`. Within our provide example, the label 
+would be rendered like this:
+
+

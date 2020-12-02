@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feedbackhub:FeedbackItemPanel xmlns:fx="http://ns.adobe.com/mxml/2009"
+                               xmlns="exml:ext.config"
+                               xmlns:exml="http://www.jangaroo.net/exml/0.8"
+                               xmlns:feedbackhub="exml:com.coremedia.cms.studio.feedbackhub.config">
+  <fx:Metadata>
+    [ResourceBundle('com.coremedia.cms.studio.feedbackhub.FeedbackHub')]
+  </fx:Metadata>
+  <fx:Script><![CDATA[
+    import com.coremedia.ui.skins.DisplayFieldSkin;
+
+    public static const xtype:String = "com.coremedia.cms.studio.feedbackhub.config.recursiveTextFeedbackItem";
+
+    private var config:RecursiveTextFeedbackItem;
+
+    public native function RecursiveTextFeedbackItem(config:RecursiveTextFeedbackItem = null);
+    ]]></fx:Script>
+
+  <feedbackhub:items>
+    <DisplayField ui="{DisplayFieldSkin.ITALIC.getSkin()}" value="{config.feedbackItem['text']}" />
+  </feedbackhub:items>
+</feedbackhub:FeedbackItemPanel>

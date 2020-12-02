@@ -129,6 +129,11 @@ the amount of words our article should have and therefore can be used to
 calculate a percentage value how far the writing is progressed.
 
 
+Note that in this implementation, the source property that is used to 
+extract the markup is not hard coded as in the `FeedbackProvider` example,
+but can be set via settings parameter `sourceProperties`.
+
+
 ## 4. Configuration
 
 We finally have to create a new `CMSettings` document
@@ -157,65 +162,22 @@ an example of a matching configuration created for the the Blueprint Site "Chef 
   </Struct></settings>
   <identifier></identifier>
 </CMSettings>
-```
-
-Note that in this implementation, the source property that is used to 
-extract the markup is not hard coded as in the `FeedbackProvider` example,
-but can be set via settings parameter `sourceProperties`.
-
-## 4. Feedback Grouping
-
-The Feedback Hub supports the tabbed rendering of `FeedbackItems`.
-All you have to do is use the `withCollection` method which is supported 
-by most `FeedbackItemBuilders`.
-For example, we could render the percentage based `FeedbackItems` on one tab
-and the count based scores on another by adding `.withCollection("tab1")` and
-`.withCollection("tab2")` to the builders. The result would look like this:
-
-## 5. Configuration
-
-We finally have to create a new `CMSettings` document
-in the site local or global "Feedback Hub" configuration folder. Below, you see
-an example of a matching configuration created for the the Blueprint Site "Chef Corp.". 
-
-```xml
-<?xml version="1.0" encoding="UTF-8" ?>
-<CMSettings folder="/Sites/Chef Corp./United States/English/Options/Settings/Feedback Hub" name="Wordcounter Adapter" xmlns:cmexport="http://www.coremedia.com/2012/cmexport">
-  <externalRefId></externalRefId>
-  <locale></locale>
-  <master/>
-  <settings><Struct xmlns="http://www.coremedia.com/2008/struct" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <StringProperty Name="observedProperties">detailText</StringProperty>
-    <StringProperty Name="factoryId">wordCountAdapter</StringProperty>
-    <StringProperty Name="groupId">wordCountAdapter</StringProperty>
-    <StringProperty Name="contentType">CMArticle</StringProperty>
-    <BooleanProperty Name="enabled">true</BooleanProperty>
-    <StructProperty Name="settings">
-      <Struct>
-        <StringProperty Name="sourceProperties">detailText</StringProperty>
-        <StringProperty Name="ignoreList">and,with</StringProperty>
-        <IntProperty Name="target">1000</IntProperty>
-      </Struct>
-    </StructProperty>
-  </Struct></settings>
-  <identifier></identifier>
-</CMSettings>
 
 ```
 
-## 6. Localization
+## 5. Localization
 
 The localization of the Feedback Hub does not differ between
 implementations of `FeedbackAdapter` and `FeedbackProvider`. 
 It is described in detail in section **[Localization](feedback_localization.md)**.
 
-## 7. Exception Handling
+## 6. Exception Handling
 
 The overall exception handling inside the Feedback Hub does not differ between
 implementations of `FeedbackAdapter` and `FeedbackProvider`. 
 It is described in detail in section **[Exception Handling](exception_handling.md)**.
 
-## 8. Custom FeedbackItems
+## 7. Custom FeedbackItems
 
 If the existing `FeedbackItems` are not sufficient to render the desired feedback,
 we can implement custom `FeedbackItems` with custom components.

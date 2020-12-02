@@ -12,13 +12,24 @@ All we have to do is implement the interface `FeedbackItem` for this:
 public class RecursiveTextFeedbackItem implements FeedbackItem {
 
   private String text;
+  private String collection;
 
-  public RecursiveTextFeedbackItem(String text) {
+  public RecursiveTextFeedbackItem(String collection, String text) {
+    this.collection = collection;
     this.text = text;
+  }
+  
+  public RecursiveTextFeedbackItem(String text) {
+    this(null, text);
   }
 
   public String getText() {
     return text;
+  }
+
+  @Override
+  public String getCollection() {
+    return collection;
   }
 
   @Override
@@ -30,13 +41,19 @@ public class RecursiveTextFeedbackItem implements FeedbackItem {
 
 The interface does not require the implementation of any method, but we
 override the `getType` method to have a simpler type name than the actual class name.
+Also, we provide the possibility to add the `FeedbackItem` to a specific collection
+by overriding the `getCollection` method.
 
 Within our provider or adapter, we can create a new `RecursiveTextFeedbackItem` 
 with the text we wont to render:
 
 ```java
-RecursiveTextFeedbackItem myItem = new RecursiveTextFeedbackItem("Hello World!");
+RecursiveTextFeedbackItem myItem = new RecursiveTextFeedbackItem("header", 
+  "The amount of words is counted here");
 ```
+
+To make this example more interesting, we add the text to the reserved collection `header` 
+which means that it will be rendered immediately after the title and before the sub tabs.
 
 ## AS/MXML Implementation
 
@@ -65,13 +82,15 @@ In a first step, we have to implement a sub-component of class `FeedbackItemPane
     ]]></fx:Script>
 
   <feedbackhub:items>
-    <DisplayField ui="{DisplayFieldSkin.ITALIC.getSkin()}" value="{config.feedbackItem['text']}" />
+    <DisplayField ui="{DisplayFieldSkin.ITALIC.getSkin()}" value="{getLabel(config.feedbackItem['text'])}" />
   </feedbackhub:items>
 </feedbackhub:FeedbackItemPanel>
 ```
 
 Our example only contains a `DisplayField` which renders the `RecursiveTextFeedbackItem` property `text`.
 The `ITALIC` `DisplayFieldSkin` is applied to the label in order to render the text in _italic_.
+We also use the `getLabel` function which checks if the given text is a key inside our resource bundle
+and returns the localized label instead of using the original text.
 
 We finally have to tell the Feedback Hub about this panel by using the `feedbackService` instance.
 For this, we use the initialization of our Studio plugin:
@@ -109,3 +128,4 @@ our `RecursiveTextFeedbackItem.java`. Within our provide example, the label
 would be rendered like this:
 
 
+![Custom FeedbackItem](images/custom_feedbackitem.png "Custom FeedbackItem")

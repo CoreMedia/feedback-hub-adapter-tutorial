@@ -8,6 +8,8 @@
     [ResourceBundle('com.coremedia.blueprint.studio.feedback.wordcounter.FeedbackHubWordCounterStudioPlugin')]
   </fx:Metadata>
   <fx:Script><![CDATA[
+    import com.coremedia.cms.studio.feedbackhub.feedbackService;
+
     import mx.resources.ResourceManager;
 
     private var config:FeedbackHubWordCounterStudioPlugin;
@@ -15,7 +17,7 @@
     public native function FeedbackHubWordCounterStudioPlugin(config:FeedbackHubWordCounterStudioPlugin = null);
 
     private function __initialize__(config:FeedbackHubWordCounterStudioPlugin):void {
-//      feedbackService.registerFeedbackItemPanel("abtest", ABTestFeedbackItemPanel({}));
+      feedbackService.registerFeedbackItemPanel("recursiveText", RecursiveTextFeedbackItem({}));
     }
     ]]></fx:Script>
 

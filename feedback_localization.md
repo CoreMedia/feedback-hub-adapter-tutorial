@@ -51,6 +51,10 @@ wordCountProvider_tab2_tab_tooltip = Counted Values
 wordCountProvider_tab2_tab_ariaLabel = Counted Values
 ```
 
+The localized provider would look like this:
+
+![Localized Provider](images/provider_localized.png "Localized Provider")
+
 ## FeedbackItem Localization
 
 For the labels and titles that are used for `FeedbackItems`, the Feedback

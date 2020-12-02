@@ -1,8 +1,8 @@
 {
   "studioPlugins": [
     {
-      "mainClass": "com.coremedia.blueprint.studio.feedback.textcounter.FeedbackHubTextCounterStudioPlugin",
-      "name": "A/B Testing Plugin"
+      "mainClass": "com.coremedia.blueprint.studio.feedback.wordcounter.FeedbackHubWordCounterStudioPlugin",
+      "name": "Word Counter Plugin"
     }
   ]
 }

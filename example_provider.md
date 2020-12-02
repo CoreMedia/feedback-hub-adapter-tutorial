@@ -170,6 +170,8 @@ and the count based scores on another by adding `.withCollection("tab1")` and
 `.withCollection("tab2")` to the builders. The result would look like this:
 
 
+![Feedback Tabs](images/provider_tabbed_1.png "Feedback Tabs")
+![Feedback Tabs](images/provider_tabbed_2.png "Feedback Tabs")
 
 
 ## 5. Configuration

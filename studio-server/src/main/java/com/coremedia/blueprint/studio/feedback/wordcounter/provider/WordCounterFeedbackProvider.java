@@ -1,7 +1,7 @@
 package com.coremedia.blueprint.studio.feedback.wordcounter.provider;
 
 import com.coremedia.blueprint.studio.feedback.wordcounter.WordCounterSettings;
-import com.coremedia.blueprint.studio.feedback.wordcounter.items.RecursiveTextFeedbackItem;
+import com.coremedia.blueprint.studio.feedback.wordcounter.items.CursiveTextFeedbackItem;
 import com.coremedia.cap.content.Content;
 import com.coremedia.feedbackhub.adapter.FeedbackContext;
 import com.coremedia.feedbackhub.items.FeedbackItem;
@@ -91,7 +91,7 @@ public class WordCounterFeedbackProvider implements FeedbackProvider {
             .withCollection("tab2")
             .build();
 
-    RecursiveTextFeedbackItem myItem = new RecursiveTextFeedbackItem("header",
+    CursiveTextFeedbackItem myItem = new CursiveTextFeedbackItem("header",
             "The amount of words is counted here");
 
     //the items are rendered in the order they are passed here (except the feedbackLink which is always rendered at the top)

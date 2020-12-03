@@ -17,7 +17,7 @@
     public native function FeedbackHubWordCounterStudioPlugin(config:FeedbackHubWordCounterStudioPlugin = null);
 
     private function __initialize__(config:FeedbackHubWordCounterStudioPlugin):void {
-      feedbackService.registerFeedbackItemPanel("recursiveText", RecursiveTextFeedbackItem({}));
+      feedbackService.registerFeedbackItemPanel("cursiveText", CursiveTextFeedbackItem({}));
     }
     ]]></fx:Script>
 

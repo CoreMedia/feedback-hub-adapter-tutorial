@@ -2,7 +2,7 @@
 
 This sections describes how to implement a custom `FeedbackItem`.
 To keep the example simple, we create a new `FeedbackItem` that allows us 
-to render text with a recursive font.
+to render text with a cursive font.
 
 ## Java Implementation
 
@@ -34,7 +34,7 @@ public class RecursiveTextFeedbackItem implements FeedbackItem {
 
   @Override
   public String getType() {
-    return "recursiveText";
+    return "cursiveText";
   }
 }
 ```
@@ -74,11 +74,11 @@ First, we have to implement a sub-component of class `FeedbackItemPanel`:
   <fx:Script><![CDATA[
     import com.coremedia.ui.skins.DisplayFieldSkin;
 
-    public static const xtype:String = "com.coremedia.cms.studio.feedbackhub.config.recursiveTextFeedbackItem";
+    public static const xtype:String = "com.coremedia.cms.studio.feedbackhub.config.cursiveTextFeedbackItem";
 
     private var config:RecursiveTextFeedbackItem;
 
-    public native function RecursiveTextFeedbackItem(config:RecursiveTextFeedbackItem = null);
+    public native function RecursiveTextFeedbackItem(config:CursiveTextFeedbackItem = null);
     ]]></fx:Script>
 
   <feedbackhub:items>
@@ -115,7 +115,7 @@ For this, we use the `initialize` method of our `FeedbackHubWordCounterStudioPlu
     public native function FeedbackHubWordCounterStudioPlugin(config:FeedbackHubWordCounterStudioPlugin = null);
 
     private function __initialize__(config:FeedbackHubWordCounterStudioPlugin):void {
-      feedbackService.registerFeedbackItemPanel("recursiveText", RecursiveTextFeedbackItem({}));
+      feedbackService.registerFeedbackItemPanel("cursiveText", CursiveTextFeedbackItem({}));
     }
     ]]></fx:Script>
 
@@ -123,7 +123,7 @@ For this, we use the `initialize` method of our `FeedbackHubWordCounterStudioPlu
   ...
 ```
 
-Note that the value `recursiveText` matches the `getType` methods return value of
+Note that the value `cursiveText` matches the `getType` methods return value of
 our `RecursiveTextFeedbackItem.java`. Within our provide example, the label 
 would be rendered like this:
 

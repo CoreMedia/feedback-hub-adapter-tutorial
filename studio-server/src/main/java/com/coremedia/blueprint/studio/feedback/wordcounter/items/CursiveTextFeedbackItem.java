@@ -5,17 +5,17 @@ import com.coremedia.feedbackhub.items.FeedbackItem;
 /**
  *
  */
-public class RecursiveTextFeedbackItem implements FeedbackItem {
+public class CursiveTextFeedbackItem implements FeedbackItem {
 
   private String text;
   private String collection;
 
-  public RecursiveTextFeedbackItem(String collection, String text) {
+  public CursiveTextFeedbackItem(String collection, String text) {
     this.collection = collection;
     this.text = text;
   }
 
-  public RecursiveTextFeedbackItem(String text) {
+  public CursiveTextFeedbackItem(String text) {
     this(null, text);
   }
 
@@ -30,6 +30,6 @@ public class RecursiveTextFeedbackItem implements FeedbackItem {
 
   @Override
   public String getType() {
-    return "recursiveText";
+    return "cursiveText";
   }
 }

@@ -9,11 +9,11 @@
   <fx:Script><![CDATA[
     import com.coremedia.ui.skins.DisplayFieldSkin;
 
-    public static const xtype:String = "com.coremedia.cms.studio.feedbackhub.config.recursiveTextFeedbackItem";
+    public static const xtype:String = "com.coremedia.cms.studio.feedbackhub.config.cursiveTextFeedbackItem";
 
-    private var config:RecursiveTextFeedbackItem;
+    private var config:CursiveTextFeedbackItem;
 
-    public native function RecursiveTextFeedbackItem(config:RecursiveTextFeedbackItem = null);
+    public native function CursiveTextFeedbackItem(config:CursiveTextFeedbackItem = null);
     ]]></fx:Script>
 
   <feedbackhub:items>

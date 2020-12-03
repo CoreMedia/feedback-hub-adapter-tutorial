@@ -50,18 +50,22 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>com.coremedia.feedbackhub</groupId>
       <artifactId>feedback-hub-api</artifactId>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>com.coremedia.cms</groupId>
       <artifactId>cap-unified-api</artifactId>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>com.coremedia.cms</groupId>
       <artifactId>coremedia-xml</artifactId>
+      <scope>provided</scope>
     </dependency>
   </dependencies>
 

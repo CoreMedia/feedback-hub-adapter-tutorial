@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMSettings folder="/Sites/Chef Corp./United States/English/Options/Settings/Feedback Hub" name="Wordcounter Adapter" xmlns:cmexport="http://www.coremedia.com/2012/cmexport">
+<externalRefId></externalRefId>
+<locale></locale>
+<master/>
+<settings><Struct xmlns="http://www.coremedia.com/2008/struct" xmlns:xlink="http://www.w3.org/1999/xlink">
+<StringProperty Name="observedProperties">detailText</StringProperty>
+<StringProperty Name="factoryId">wordCountAdapter</StringProperty>
+<StringProperty Name="groupId">wordCountAdapter</StringProperty>
+<StringProperty Name="contentType">CMArticle</StringProperty>
+<BooleanProperty Name="enabled">true</BooleanProperty>
+<StructProperty Name="settings">
+<Struct>
+<StringProperty Name="sourceProperties">detailText</StringProperty>
+<StringProperty Name="ignoreList">and,with</StringProperty>
+<IntProperty Name="target">1000</IntProperty>
+</Struct>
+</StructProperty>
+</Struct></settings>
+<identifier></identifier>
+</CMSettings>

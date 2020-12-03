@@ -1,6 +1,6 @@
 # Implementing a FeedbackAdapter 
 
-In this tutorial we will show you which steps are are required to 
+In this tutorial you will learn which steps are required to 
 implement your own `FeedbackAdapter`. This example adapter will count the amount of words
 you have used inside your articles `detailText` field. 
 
@@ -9,13 +9,13 @@ text from content.
 
 You can either clone this project and rename/refactor
 the corresponding classes and methods or you can start from scratch with your own modules.
-In any case, we assume that the `studio` and `studio-lib` modules have been setup properly.
+In any case, the `studio` and `studio-lib` modules must have been set up properly.
 
 ## 1. Spring Configuration
 
 Assuming you haven't already done it, create a `resource` folder inside your
 `studio-lib` maven module with the corresponding `META-INF/spring.factories` file
-which points to you Spring configuration class. In our example, this class is 
+which points to you Spring configuration class. In the example, this class is 
 named `WordCounterConfiguration` and looks like this:
 
 ```java
@@ -34,7 +34,7 @@ which is responsible for creating the actual `FeedbackAdapter` instance.
 
 ## 2. FeedbackHubAdapterFactory Implementation
 
-Next, we take a closer look on the `WordCounterFeedbackAdapterFactory`.
+Next, take a closer look at the `WordCounterFeedbackAdapterFactory`.
 
 ```java
 public class WordCounterFeedbackAdapterFactory implements FeedbackHubAdapterFactory<WordCounterSettings> {
@@ -54,13 +54,13 @@ public class WordCounterFeedbackAdapterFactory implements FeedbackHubAdapterFact
 The class implements the interface `FeedbackHubAdapterFactory` which requires
 the implementation of the methods:
 
-- `String getId()`: this methods return the unique id of this adapter and is used
+- `String getId()`: this method returns the unique ID of this adapter and is used
 to match the content based configuration against the actual implementation.
 - `FeedbackHubAdapter create(T settings)`: this factory method creates the actual adapter instance.
 The settings interface that is passed here, contains additional fields that may have been set
 inside the `settings` struct of the adapter configuration. Usually credentials are passed
-to the adapter this way. In our example, we use this interface to pass additional 
-configuration parameters:
+to the adapter this way. 
+In the example, this interface is used to pass additional configuration parameters:
 
 ```java
 public interface WordCounterSettings {
@@ -80,7 +80,7 @@ public interface WordCounterSettings {
 
 ## 3. FeedbackAdapter Implementation
 
-Let's take a look on the actual feedback implementation:
+Have a look at the actual feedback implementation:
 
 ```java
 @DefaultAnnotation(NonNull.class)
@@ -118,13 +118,13 @@ public class WordCounterFeedbackAdapter implements TextFeedbackHubAdapter {
 ```
 
 
-We use the `TextFeedbackHubAdapter` which extracts the markup as plaintext from the content for us.
-We then split the plaintext using whitespaces, but also
-exclude the words that are inside the ignore list that has been passed 
+The `TextFeedbackHubAdapter` extracts the markup as plaintext from the content for you.
+Then the plaintext is splitted using whitespaces, but also
+excludes the words that are inside the ignore list that has been passed 
 as settings value.
 
 The settings value `target` determines
-the amount of words our article should have and therefore can be used to 
+the amount of words your article should have and therefore can be used to 
 calculate a percentage value of how far the writing is progressed.
 
 Note that in this implementation, the source property that is used to 
@@ -134,7 +134,7 @@ but can be configured via the settings parameter `sourceProperties`.
 
 ## 4. Configuration
 
-We finally have to create a new `CMSettings` document
+You finally have to create a new `CMSettings` document
 within a site or within the global "Feedback Hub" configuration folder. Below, you see
 an example configuration created for the Blueprint Site "Chef Corp.". 
 

@@ -1,12 +1,12 @@
 # Custom FeedbackItems
 
-This sections describes how to implement a custom `FeedbackItem`.
-To keep the example simple, we create a new `FeedbackItem` that allows us 
+This section describes how to implement a custom `FeedbackItem`.
+To keep the example simple, you will create a new `FeedbackItem` that allows you 
 to render text with a recursive font.
 
 ## Java Implementation
 
-All we have to do, is to implement the interface `FeedbackItem` for this:
+All you have to do, is to implement the interface `FeedbackItem` for this:
 
 ```java
 public class RecursiveTextFeedbackItem implements FeedbackItem {
@@ -39,28 +39,28 @@ public class RecursiveTextFeedbackItem implements FeedbackItem {
 }
 ```
 
-The interface does not require the implementation of any methods, but we
+The interface does not require the implementation of any methods, however you can
 override the `getType` method to have a simpler type name than the actual class name.
-Also, we provide the possibility to add the `FeedbackItem` to a specific collection
+Also, you can provide the possibility to add the `FeedbackItem` to a specific collection
 by overriding the `getCollection` method.
 
-Within our provider or adapter, we can create a new `RecursiveTextFeedbackItem` 
-with the text we want to render:
+Within your provider or adapter, you can create a new `RecursiveTextFeedbackItem` 
+with the text you want to render:
 
 ```java
 RecursiveTextFeedbackItem myItem = new RecursiveTextFeedbackItem("header", 
   "The amount of words is counted here");
 ```
 
-To make this example more interesting, we add the text to the reserved collection `header`, 
+To make this example more interesting, you add the text to the reserved collection `header`, 
 which means that it will be rendered immediately after the title and before the sub tabs.
 
 ## AS/MXML Implementation
 
-On the client site, we have to implement the component that should render
+On the client site, you have to implement the component, which should render
 the new `FeedbackItem` type.
 
-First, we have to implement a sub-component of class `FeedbackItemPanel`:
+First, you have to implement a sub-component of class `FeedbackItemPanel`:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -87,13 +87,13 @@ First, we have to implement a sub-component of class `FeedbackItemPanel`:
 </feedbackhub:FeedbackItemPanel>
 ```
 
-Our example only contains a `DisplayField` which renders the `RecursiveTextFeedbackItem` property `text`.
+The example only contains a `DisplayField` which renders the `RecursiveTextFeedbackItem` property `text`.
 The `ITALIC` `DisplayFieldSkin` is applied to the label in order to render the text in _italic_.
-We also use the `getLabel` function which checks if the given text is a key inside our resource bundle
+You also use the `getLabel` function which checks if the given text is a key inside your resource bundle
 and returns the localized label instead of using the original text.
 
-We finally have to tell the Feedback Hub about this panel by using the `feedbackService` instance.
-For this, we use the `initialize` method of our `FeedbackHubWordCounterStudioPlugin`:
+You finally have to tell the Feedback Hub about this panel by using the `feedbackService` instance.
+For this, use the `initialize` method of our `FeedbackHubWordCounterStudioPlugin`:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -124,7 +124,7 @@ For this, we use the `initialize` method of our `FeedbackHubWordCounterStudioPlu
 ```
 
 Note that the value `recursiveText` matches the `getType` methods return value of
-our `RecursiveTextFeedbackItem.java`. Within our provide example, the label 
+your `RecursiveTextFeedbackItem.java` class. Within the provided example, the label 
 would be rendered like this:
 
 

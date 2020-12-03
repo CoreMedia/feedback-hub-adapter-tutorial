@@ -14,15 +14,15 @@ If a project is inactive it means that the development has been discontinued and
 
 ## Overview 
 
-In this tutorial we are going to learn about how to use the CoreMedia Feedback Hub API.
+In this tutorial you are going to learn about how to use the CoreMedia Feedback Hub API.
 It explains step-by-step how to set up a new CoreMedia Extension for the Feedback Hub
 and how to build a new Feedback Hub adapter or provider with the
-corresponding classes, localization, error handling, etc..
+corresponding classes, localization, error handling and others.
 
 ## Versioning
 
 To find out which CoreMedia versions are supported by this project, 
-please take look at the releases section or on the existing branches. 
+please take a look at the releases section or on the existing branches. 
 To find the matching version of your CoreMedia system, please checkout the branch 
 with the corresponding name. For example, 
 if your CoreMedia version is 2101.1, checkout the branch 2101.1.
@@ -45,7 +45,7 @@ mvn -f workspace-configuration/extensions com.coremedia.maven:extensions-maven-p
 
 - Rebuild the workspace
 
-## How To Read This Tutorial
+## Supported Use Cases
 
 There are two possibilities to implement your Feedback Hub extension, depending
 on your use case. This tutorial covers both cases in separate sections: 
@@ -54,7 +54,7 @@ on your use case. This tutorial covers both cases in separate sections:
  
 The Feedback Hub has predefined `FeedbackHubAdapters`. They offer some prefabrication
 to make the integration of similar services easier. One example for this
-is the `BlobKeywordsFeedbackHubAdapter` which already gives us the blob the keywords 
+is the `BlobKeywordsFeedbackHubAdapter`, which already gives you the blob the keywords 
 should be extracted from. Please check the documentation for the list of existing
 `FeedbackHubAdapters`. 
 
@@ -64,7 +64,7 @@ Tutorial Link: **[Implementing a FeedbackAdapter](example_adapter.md)**
 
 The `FeedbackProvider` interface is the general interface to implement for any
 kind of feedback. It does not offer any kind of prefabrication and can be used
-if none of the existing `FeedbackHubAdapters` are applicable for your usecase.
+if none of the existing `FeedbackHubAdapters` are applicable for your use case.
 
 Tutorial Link: **[Implementing a FeedbackProvider](example_provider.md)**
 
@@ -76,13 +76,13 @@ get some hands-on understanding of the vast and compelling capabilities of
 CoreMedia. Whatever your experience level with CoreMedia is, we've got something
 for you.
 
-Each project in our Labs platform is an extra feature to be used with CoreMedia,
-including extensions, tools and 3rd party integrations. We provide some test
+Each project on the Labs platform is an extra feature to be used with CoreMedia,
+including extensions, tools and 3rd party integrations. CoreMedia provides some test
 data and explanatory videos for non-customers and for insiders there is
 open-source code and instructions on integrating the feature into your
 CoreMedia workspace. 
 
-The code we provide is meant to be example code, illustrating a set of features
+The provided code is meant to be example code, illustrating a set of features
 that could be used to enhance your CoreMedia experience. We'd love to hear your
 feedback on use-cases and further developments! If you're having problems with
 our code, please refer to our issues section. If you already have a solution to 

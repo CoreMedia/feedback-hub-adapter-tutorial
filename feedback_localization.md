@@ -1,9 +1,9 @@
 # Localization
 
-When implementing a feedback source, an additional Studio Extension is required
+When implementing a feedback source, an additional Studio extension is required
 to provide at least a resource bundle that is used to localize error messages and feedback labels.
 
-Inside our Studio plugin `FeedbackHubWordCounterStudioPlugin.mxml`, we copy our own resource bundle to the
+Inside the Studio plugin `FeedbackHubWordCounterStudioPlugin.mxml`, copy your own resource bundle to the
 `com.coremedia.cms.studio.feedbackhub.FeedbackHub` bundle: 
 
 ```xml
@@ -18,7 +18,7 @@ Inside our Studio plugin `FeedbackHubWordCounterStudioPlugin.mxml`, we copy our 
 
 ## Main Tab Localization
 
-For the localization of the main tab, we use the `factoryId` of our adapter
+For the localization of the main tab, use the `factoryId` of the adapter
 or provider and append the suffixes `iconCls`, `title`, `tooltip` and `ariaLabel`
 for the corresponding component attributes:
 
@@ -31,13 +31,13 @@ wordCountProvider_ariaLabel=Word Counter
 
 ![Tab Localization](images/feedback_tab.png "Tab Localization")
 
-We now have a custom icon and label for our Feedback source.
+You now have a custom icon and label for our Feedback source.
 
 
 ## Sub Tab Localization
 
 When using tabbed feedback rendering, the localized labels for these tabs
-can be provided in a similar way as for the main tab. The required format is
+can be provided similarly as for the main tab. The required format is
 `<factoryId>_<collection>_tab_<labelType>`. Below you see an example that is 
 used for the provider implementation:
 
@@ -60,7 +60,7 @@ The localized provider would look like this:
 For the labels and titles that are used for `FeedbackItems`, the Feedback
 Hub will always try to look up the corresponding value from 
 the `com.coremedia.cms.studio.feedbackhub.FeedbackHub` resource bundle.
-For example, we can pass "word_count_label" as label value for the score bar: 
+For example, you can pass "word_count_label" as label value for the score bar: 
 
 ```java
 ScoreBarFeedbackItem scoreBar = ScoreBarFeedbackItem.builder()
@@ -70,7 +70,7 @@ ScoreBarFeedbackItem scoreBar = ScoreBarFeedbackItem.builder()
         .build();
 ```
 
-Then we provide a localized value for this `String` within our 
+Then you provide a localized value for this `String` within the 
 `com.coremedia.blueprint.studio.feedback.wordcounter.FeedbackHubWordCounterStudioPlugin` resource bundle.
 
 ```

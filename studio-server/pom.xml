@@ -83,13 +83,13 @@
         <version>3.1.2</version>
         <executions>
           <execution>
-            <id>studio-server.content-hub-adapter-filesystem:maven-dependency-plugin:analyze-duplicate</id>
+            <id>studio-server.feedback-hub-adapter-wordcounter:maven-dependency-plugin:analyze-duplicate</id>
             <goals>
               <goal>analyze-duplicate</goal>
             </goals>
           </execution>
           <execution>
-            <id>studio-server.content-hub-adapter-filesystem:maven-dependency-plugin:analyze-only</id>
+            <id>studio-server.feedback-hub-adapter-wordcounter:maven-dependency-plugin:analyze-only</id>
             <goals>
               <goal>analyze-only</goal>
             </goals>

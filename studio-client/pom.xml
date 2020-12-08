@@ -50,21 +50,18 @@
       <groupId>com.coremedia.ui.toolkit</groupId>
       <artifactId>ui-components</artifactId>
       <type>swc</type>
-      <scope>provided</scope>
     </dependency>
 
     <dependency>
       <groupId>com.coremedia.ui.sdk</groupId>
       <artifactId>editor-components</artifactId>
       <type>swc</type>
-      <scope>provided</scope>
     </dependency>
 
     <dependency>
       <groupId>com.coremedia.ui.sdk</groupId>
       <artifactId>feedback-hub-editor-components</artifactId>
       <type>swc</type>
-      <scope>provided</scope>
     </dependency>
 
     <dependency>

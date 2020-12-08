@@ -190,3 +190,6 @@ $RECYCLE.BIN/
 
 # Microsoft Office Temporary Files
 ~*.*
+
+# Node
+.remote-packages

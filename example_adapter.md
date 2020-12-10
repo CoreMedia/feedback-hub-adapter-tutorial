@@ -8,7 +8,8 @@ The implementation will use the `TextFeedbackHubAdapter` which already extracts
 text from content. 
 
 You can either clone this project and rename/refactor
-the corresponding classes and methods or you can start from scratch with your own modules.
+the corresponding classes and methods or you can 
+**[start from scratch by using archetypes](archetypes.md)**.
 In any case, we assume that the `studio` and `studio-lib` modules have been setup properly.
 
 ## 1. Spring Configuration

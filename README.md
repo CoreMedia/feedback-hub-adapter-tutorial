@@ -47,13 +47,15 @@ __Studio Plugin Modules__
 
 - When you have a CoreMedia environment where the Java modules of this plugin are already deployed
 or this plugin does not have any Java plugin modules, just invoke the following command
-from the `studio-client` directory of this project: `mvn jangaroo:run`
-- If you want to use your local Studio, execute the following steps
-    - Start the Studio server
-    - Execute the command `mvn jangaroo:run -pl :studio-resources` in the root 
-    folder of your Blueprint workspace.
-    - Execute the command `mvn jangaroo:run -DjooJettyPort=8090 -DjooProxyTargetUri=http://localhost:8080/`
-    - Login to the Studio at URL http://localhost:8090
+from the root directory of your _Blueprint_ workspace: `mvn jangaroo:run -pl :studio-app -Dinstallation.host=<YOUR_TEST_SYSTEM_HOST>`
+
+- If you want to use your local Studio, execute the following steps, start the Studio server
+and invoke the following command from the root directory of the _Blueprint_ workspace:
+`mvn jangaroo:run -pl :studio-app -DadditionalPackagesDir=C:/feedback-hub-adapter-tutorial/studio-client/target/app`
+The parameter `installation.host` is not required here, since we are working 
+with a local Studio server.
+
+Finally, login to the Studio at URL http://localhost:8080.
     
 __Plugin Deployment__    
 

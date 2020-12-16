@@ -91,7 +91,8 @@ from the root directory of your _Blueprint_ workspace:
 and invoke the following command from the root directory of the _Blueprint_ workspace:
 `mvn jangaroo:run -pl :studio-resources -DadditionalPackagesDirs=<BASE_DIR>/feedback-hub-adapter-tutorial/studio-client/target/app`.
 The parameter `installation.host` is not required here, since we are working 
-with a local Studio server. Note that the parameter `additionalPackagesDirs` accepts multiple folders from different apps.
+with a local Studio server. Note that the parameter `additionalPackagesDirs` accepts 
+multiple folders from different apps in a comma separated format.
 This allows you to develop multiple plugins in parallel.
 
 Finally, login to the Studio at URL http://localhost:8080.

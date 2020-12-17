@@ -7,12 +7,12 @@ you have used inside your articles `detailText` field.
 You can either clone this project and rename/refactor
 the corresponding classes and methods or you can 
 **[start from scratch by using archetypes](archetypes.md)**.
-In any case, we assume that the `studio` and `studio-lib` modules have been setup properly.
+In any case, we assume that the `studio-server` and `studio-client` modules have been setup properly.
 
 ## 1. Spring Configuration
 
 Assuming you haven't already done it, create a `resource` folder inside your
-`studio-lib` maven module with the corresponding `META-INF/spring.factories` file
+`studio-server` maven module with the corresponding `resources/plugin.properties` file
 which points to you Spring configuration class. In our example, this class is 
 named `WordCounterConfiguration` and looks like this:
 

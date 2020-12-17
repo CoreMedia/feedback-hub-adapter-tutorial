@@ -3,7 +3,7 @@
 For the creation of new Studio client and server plugins, CoreMedia supports
 archetypes to generate the overall structure for these new modules.
 
-## Creating a Studio Plugin
+## Creating a Studio Client Plugin
 
 For creating a new Studio plugin, you can use the following command.
 

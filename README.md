@@ -76,6 +76,10 @@ host `localhost` and port `8000`. The VM parameter should look like this:
 
 `-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:8000`
 
+In IDEA, it should look like this:
+
+![Feedback Rendering](images/debugging.png "IDEA Debug Configuration")
+
 When executed, the Studio server will start up and you will be able to 
 debug your plugin.
 

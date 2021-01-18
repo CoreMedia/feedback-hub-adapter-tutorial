@@ -89,7 +89,10 @@ debug your plugin.
 - When you have a CoreMedia test system where the Java module of this plugin is already deployed
 or this plugin does not have any Java plugin modules, just invoke the following command
 from the root directory of your _Blueprint_ workspace: 
-`mvn jangaroo:run -pl :studio-resources -Dinstallation.host=<YOUR_TEST_SYSTEM_HOST>`
+
+```
+mvn jangaroo:run -pl :studio-resources -Dinstallation.host=<YOUR_TEST_SYSTEM_HOST>
+```
 
 - If you want to use your local Studio server, start the Studio server
 and invoke the following command from the root directory of the _Blueprint_ workspace:

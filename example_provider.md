@@ -225,10 +225,10 @@ If the existing `FeedbackItems` are not sufficient to render the desired feedbac
 you can implement custom `FeedbackItems`.
 An example for this is described in section **[Custom FeedbackItems](custom_feedback.md)**.
 
-## 9. User Interaction
+## 9. Jobs Framework
 
 In some situations it is desired to support user interaction, e.g. via buttons 
 on custom Feedback panels, which should trigger actions on the server.
-The recommended way to do this, is using the Studio's jobs framwork. 
+The recommended way to do this, is using the Studio's jobs framework. 
 
-An example for this is described in section **[User Interaction](user_interaction.md)**.
+An example for this is described in section **[Jobs Framework](jobs_framework.md)**.

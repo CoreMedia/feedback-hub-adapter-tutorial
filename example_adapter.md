@@ -185,3 +185,11 @@ It is described in detail in section **[Error Handling](error_handling.md)**.
 If the existing `FeedbackItems` are not sufficient to render the desired feedback,
 you can implement custom `FeedbackItems`.
 An example for this is described in section **[Custom FeedbackItems](custom_feedback.md)**.
+
+## 8. User Interaction
+
+In some situations it is desired to support user interaction, e.g. via buttons 
+on custom Feedback panels, which should trigger actions on the server.
+The recommended way to do this, is using the Studio's jobs framwork. 
+
+An example for this is described in section **[User Interaction](user_interaction.md)**.

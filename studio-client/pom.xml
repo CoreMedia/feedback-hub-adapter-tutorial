@@ -82,7 +82,7 @@
         <configuration>
           <namespaces>
             <namespace>
-              <uri>exml:com.coremedia.blueprint.studio.feedbackhub.wordcounter</uri>
+              <uri>exml:com.coremedia.labs.plugins.feedbackhub.wordcounter</uri>
             </namespace>
           </namespaces>
           <jooProxyPathSpec>${jooProxyPathSpec}</jooProxyPathSpec>

@@ -103,7 +103,7 @@ For this, we use the `initialize` method of our `FeedbackHubWordCounterStudioPlu
         xmlns="exml:ext.config"
         xmlns:editor="exml:com.coremedia.cms.editor.sdk.config">
   <fx:Metadata>
-    [ResourceBundle('com.coremedia.blueprint.studio.feedback.wordcounter.FeedbackHubWordCounterStudioPlugin')]
+    [ResourceBundle('com.coremedia.labs.plugins.feedback.wordcounter.FeedbackHubWordCounterStudioPlugin')]
   </fx:Metadata>
   <fx:Script><![CDATA[
     import com.coremedia.cms.studio.feedbackhub.feedbackService;

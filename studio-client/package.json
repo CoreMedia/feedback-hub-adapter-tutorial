@@ -1,7 +1,7 @@
 {
   "studioPlugins": [
     {
-      "mainClass": "com.coremedia.blueprint.studio.feedback.wordcounter.FeedbackHubWordCounterStudioPlugin",
+      "mainClass": "com.coremedia.labs.plugins.feedbackhub.wordcounter.FeedbackHubWordCounterStudioPlugin",
       "name": "Word Counter Plugin"
     }
   ]

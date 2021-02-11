@@ -12,7 +12,7 @@ Inside our Studio plugin `FeedbackHubWordCounterStudioPlugin.mxml`, we copy our 
         destination="{ResourceManager.getInstance().getResourceBundle(null, 
             'com.coremedia.cms.studio.feedbackhub.FeedbackHub')}"
         source="{ResourceManager.getInstance().getResourceBundle(null, 
-            'com.coremedia.blueprint.studio.feedback.wordcounter.FeedbackHubWordCounterStudioPlugin')}"/>
+            'com.coremedia.labs.plugins.feedbackhub.wordcounter.FeedbackHubWordCounterStudioPlugin')}"/>
 </editor:configuration>
 ```
 
@@ -71,7 +71,7 @@ ScoreBarFeedbackItem scoreBar = ScoreBarFeedbackItem.builder()
 ```
 
 Then we provide a localized value for this `String` within our 
-`com.coremedia.blueprint.studio.feedback.wordcounter.FeedbackHubWordCounterStudioPlugin` resource bundle.
+`com.coremedia.labs.plugins.feedback.wordcounter.FeedbackHubWordCounterStudioPlugin` resource bundle.
 
 ```
 word_count_label = Word Count

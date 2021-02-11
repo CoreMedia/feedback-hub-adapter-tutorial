@@ -8,9 +8,7 @@
     [ResourceBundle('com.coremedia.labs.plugins.feedbackhub.wordcounter.FeedbackHubWordCounterStudioPlugin')]
   </fx:Metadata>
   <fx:Script><![CDATA[
-    import com.coremedia.blueprint.studio.feedback.wordcounter.*;
     import com.coremedia.cms.studio.feedbackhub.feedbackService;
-    import com.coremedia.labs.plugins.feedback.wordcounter.*;
 
     import mx.resources.ResourceManager;
 

@@ -1,8 +1,9 @@
-package com.coremedia.blueprint.studio.feedback.wordcounter.provider;
+package com.coremedia.labs.plugins.feedbackhub.wordcounter.provider;
 
-import com.coremedia.blueprint.studio.feedback.wordcounter.WordCounterSettings;
-import com.coremedia.blueprint.studio.feedback.wordcounter.items.CursiveTextFeedbackItem;
+import com.coremedia.labs.plugins.feedbackhub.wordcounter.WordCounterSettings;
+import com.coremedia.labs.plugins.feedbackhub.wordcounter.items.CursiveTextFeedbackItem;
 import com.coremedia.cap.content.Content;
+import com.coremedia.feedbackhub.FeedbackItemDefaultCollections;
 import com.coremedia.feedbackhub.adapter.FeedbackContext;
 import com.coremedia.feedbackhub.items.FeedbackItem;
 import com.coremedia.feedbackhub.items.FeedbackItemFactory;
@@ -91,7 +92,7 @@ public class WordCounterFeedbackProvider implements FeedbackProvider {
             .withCollection("tab2")
             .build();
 
-    CursiveTextFeedbackItem myItem = new CursiveTextFeedbackItem("header",
+    CursiveTextFeedbackItem myItem = new CursiveTextFeedbackItem(FeedbackItemDefaultCollections.header.name(),
             "The amount of words is counted here");
 
     //the items are rendered in the order they are passed here (except the feedbackLink which is always rendered at the top)

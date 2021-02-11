@@ -1,4 +1,4 @@
-package com.coremedia.blueprint.studio.feedback.wordcounter.items;
+package com.coremedia.labs.plugins.feedbackhub.wordcounter.items;
 
 import com.coremedia.feedbackhub.items.FeedbackItem;
 

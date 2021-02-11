@@ -86,7 +86,7 @@ public class MyJob implements Job {
     }
   }
 
-  private SearchmetricsSettings getSettings() {
+  private WordCounterSettings getSettings() {
     return feedbackSettingsProvider.getSettings(groupId, siteId);
   }
 }

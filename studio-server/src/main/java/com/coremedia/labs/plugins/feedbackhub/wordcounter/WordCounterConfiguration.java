@@ -1,7 +1,7 @@
-package com.coremedia.blueprint.studio.feedback.wordcounter;
+package com.coremedia.labs.plugins.feedbackhub.wordcounter;
 
-import com.coremedia.blueprint.studio.feedback.wordcounter.adapter.WordCounterFeedbackAdapterFactory;
-import com.coremedia.blueprint.studio.feedback.wordcounter.provider.WordCounterFeedbackProviderFactory;
+import com.coremedia.labs.plugins.feedbackhub.wordcounter.adapter.WordCounterFeedbackAdapterFactory;
+import com.coremedia.labs.plugins.feedbackhub.wordcounter.provider.WordCounterFeedbackProviderFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

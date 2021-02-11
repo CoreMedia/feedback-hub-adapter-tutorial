@@ -1,7 +1,7 @@
-package com.coremedia.blueprint.studio.feedback.wordcounter.adapter;
+package com.coremedia.labs.plugins.feedbackhub.wordcounter.adapter;
 
-import com.coremedia.blueprint.studio.feedback.wordcounter.WordCounterFeedbackHubErrorCode;
-import com.coremedia.blueprint.studio.feedback.wordcounter.WordCounterSettings;
+import com.coremedia.labs.plugins.feedbackhub.wordcounter.WordCounterFeedbackHubErrorCode;
+import com.coremedia.labs.plugins.feedbackhub.wordcounter.WordCounterSettings;
 import com.coremedia.feedbackhub.adapter.FeedbackHubAdapter;
 import com.coremedia.feedbackhub.adapter.FeedbackHubAdapterFactory;
 import com.coremedia.feedbackhub.adapter.FeedbackHubException;

@@ -9,17 +9,17 @@ to render text with a cursive font.
 All we have to do, is to implement the interface `FeedbackItem` for this:
 
 ```java
-public class RecursiveTextFeedbackItem implements FeedbackItem {
+public class CursiveTextFeedbackItem implements FeedbackItem {
 
   private String text;
   private String collection;
 
-  public RecursiveTextFeedbackItem(String collection, String text) {
+  public CursiveTextFeedbackItem(String collection, String text) {
     this.collection = collection;
     this.text = text;
   }
   
-  public RecursiveTextFeedbackItem(String text) {
+  public CursiveTextFeedbackItem(String text) {
     this(null, text);
   }
 
@@ -44,11 +44,11 @@ override the `getType` method to have a simpler type name than the actual class 
 Also, we provide the possibility to add the `FeedbackItem` to a specific collection
 by overriding the `getCollection` method.
 
-Within our provider or adapter, we can create a new `RecursiveTextFeedbackItem` 
+Within our provider or adapter, we can create a new `CursiveTextFeedbackItem` 
 with the text we want to render:
 
 ```java
-RecursiveTextFeedbackItem myItem = new RecursiveTextFeedbackItem("header", 
+CursiveTextFeedbackItem myItem = new CursiveTextFeedbackItem("header", 
   "The amount of words is counted here");
 ```
 
@@ -76,9 +76,9 @@ First, we have to implement a sub-component of class `FeedbackItemPanel`:
 
     public static const xtype:String = "com.coremedia.cms.studio.feedbackhub.config.cursiveTextFeedbackItem";
 
-    private var config:RecursiveTextFeedbackItem;
+    private var config:CursiveTextFeedbackItem;
 
-    public native function RecursiveTextFeedbackItem(config:CursiveTextFeedbackItem = null);
+    public native function CursiveTextFeedbackItem(config:CursiveTextFeedbackItem = null);
     ]]></fx:Script>
 
   <feedbackhub:items>
@@ -87,7 +87,7 @@ First, we have to implement a sub-component of class `FeedbackItemPanel`:
 </feedbackhub:FeedbackItemPanel>
 ```
 
-Our example only contains a `DisplayField` which renders the `RecursiveTextFeedbackItem` property `text`.
+Our example only contains a `DisplayField` which renders the `CursiveTextFeedbackItem` property `text`.
 The `ITALIC` `DisplayFieldSkin` is applied to the label in order to render the text in _italic_.
 We also use the `getLabel` function which checks if the given text is a key inside our resource bundle
 and returns the localized label instead of using the original text.
@@ -124,7 +124,7 @@ For this, we use the `initialize` method of our `FeedbackHubWordCounterStudioPlu
 ```
 
 Note that the value `cursiveText` matches the `getType` methods return value of
-our `RecursiveTextFeedbackItem.java`. Within our provide example, the label 
+our `CursiveTextFeedbackItem.java`. Within our provide example, the label 
 would be rendered like this:
 
 

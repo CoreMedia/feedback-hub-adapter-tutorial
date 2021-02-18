@@ -1,6 +1,6 @@
 # Custom FeedbackItems
 
-This sections describes how to implement a custom `FeedbackItem`.
+This section describes how to implement a custom `FeedbackItem`.
 To keep the example simple, we create a new `FeedbackItem` that allows us 
 to render text with a cursive font.
 

@@ -219,13 +219,17 @@ The overall exception handling inside the Feedback Hub does not differ between
 implementations of `FeedbackAdapter` and `FeedbackProvider`. 
 It is described in detail in section **[Error Handling](error_handling.md)**.
 
-## 8. Custom FeedbackItems
+## 8. Predefined FeedbackItems
+
+The list of predefined components for `FeedbackItems` is listed here: **[Predefined FeedbackItems](predefined_feedback.md)**.
+
+## 9. Custom FeedbackItems
 
 If the existing `FeedbackItems` are not sufficient to render the desired feedback,
 you can implement custom `FeedbackItems`.
 An example for this is described in section **[Custom FeedbackItems](custom_feedback.md)**.
 
-## 9. Jobs Framework
+## 10. Jobs Framework
 
 In some situations it is desired to support user interaction, e.g. via buttons 
 on custom Feedback panels, which should trigger actions on the server.

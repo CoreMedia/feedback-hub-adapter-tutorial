@@ -69,7 +69,7 @@ workspace in __debug__ mode and pass the testsystem host name and the location
 of the plugin directory where the zip archive of this plugin is located.
 For example: 
 
-`mvnDebug spring-boot:run -Dinstallation.host=my-test-system.vm -Dplugins.directory=C:/workspace/plugins`
+`mvnDebug spring-boot:run -Dinstallation.host=my-test-system.vm -Dplugins.directories=C:/workspace/plugins`
 
 Afterwards, create a "Remote Debug" configuration in IDEA with transport `Socket`,
 host `localhost` and port `8000`. The VM parameter should look like this:

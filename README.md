@@ -14,7 +14,7 @@ If a project is inactive it means that the development has been discontinued and
 
 ## Overview 
 
-In this tutorial we are going to learn about how to use the CoreMedia Feedback Hub API.
+In this tutorial you will learn about how to use the CoreMedia Feedback Hub API.
 It explains step-by-step how to set up a new CoreMedia Extension for the Feedback Hub
 and how to build a new Feedback Hub adapter or provider with the
 corresponding classes, localization, error handling, etc..
@@ -38,7 +38,7 @@ on your use case. This tutorial covers both cases in separate sections:
  
 The Feedback Hub has predefined `FeedbackHubAdapters`. They offer some prefabrication
 to make the integration of similar services easier. One example for this
-is the `BlobKeywordsFeedbackHubAdapter` which already gives us the blob the keywords 
+is the `BlobKeywordsFeedbackHubAdapter` which already gives us the data blob the keywords 
 should be extracted from. Please check the documentation for the list of existing
 `FeedbackHubAdapters`. 
 
@@ -55,7 +55,7 @@ Tutorial Link: **[Implementing a FeedbackProvider](example_provider.md)**
 
 ## Getting Started
 
-The project is a plugin for the CoreMedia Blueprint workspace.
+This repository is a plugin for the CoreMedia Blueprint workspace.
 To include it, perform the following steps:
 
 - clone this project
@@ -64,7 +64,7 @@ To include it, perform the following steps:
 
 #### Studio Server Development
 
-To debug the Java code of you plugin, start the Studio Server of your Blueprint
+To debug the Java code of you plugin, start the Studio Server of your CoreMedia Blueprint
 workspace in __debug__ mode and pass the testsystem host name and the location
 of the plugin directory where the zip archive of this plugin is located.
 For example: 
@@ -88,14 +88,14 @@ debug your plugin.
 
 - When you have a CoreMedia test system where the Java module of this plugin is already deployed
 or this plugin does not have any Java plugin modules, just invoke the following command
-from the root directory of your _Blueprint_ workspace: 
+from the root directory of your CoreMedia Blueprint workspace: 
 
 ```
 mvn jangaroo:run -pl :studio-resources -Dinstallation.host=<YOUR_TEST_SYSTEM_HOST>
 ```
 
 - If you want to use your local Studio server, start the Studio server
-and invoke the following command from the root directory of the _Blueprint_ workspace:
+and invoke the following command from the root directory of the CoreMedia Blueprint workspace:
 
 ```
 mvn jangaroo:run -pl :studio-resources -DadditionalPackagesDirs=<BASE_DIR>/feedback-hub-adapter-tutorial/studio-client/target/app

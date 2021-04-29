@@ -9,7 +9,7 @@ For creating a new Studio plugin, you can use the following command.
 
 ```
 mvn archetype:generate \
--DarchetypeGroupId=com.coremedia.plugins \
+-DarchetypeGroupId=com.coremedia.maven \
 -DarchetypeArtifactId=studio-client-plugin-archetype \
 -DarchetypeVersion=1.0.0 \
 -DgroupId=com.acme.plugins \

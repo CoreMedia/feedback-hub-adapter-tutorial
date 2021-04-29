@@ -125,7 +125,7 @@ __Builder Class:__ ExternalLinkFeedbackItemBuilder
 
 __Builder Class:__ LabelFeedbackItemBuilder
 
-![External Link](images/item-external-link.png "External Link")
+![External Link](images/item-label.png "Label")
 
 | Property          | Type     | Default Value | Description |
 | ----------------- | :------: | :------------: |------------ |

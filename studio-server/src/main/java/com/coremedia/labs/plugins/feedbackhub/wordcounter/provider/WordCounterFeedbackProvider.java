@@ -93,7 +93,7 @@ public class WordCounterFeedbackProvider implements FeedbackProvider {
             .build();
 
     CursiveTextFeedbackItem myItem = new CursiveTextFeedbackItem(FeedbackItemDefaultCollections.header.name(),
-            "The amount of words is counted here");
+            "The number of words is counted here");
 
     //the items are rendered in the order they are passed here (except the feedbackLink which is always rendered at the top)
     return CompletableFuture.completedFuture(Arrays.asList(feedbackLink, myItem, gauge, label, percentageScore, scoreBar, ratingBar));

@@ -1,7 +1,7 @@
 # Implementing a FeedbackProvider 
 
-In this tutorial we are gonna explain which steps are required to 
-implement you own `FeedbackProvider`. This provider will count the amount of words
+In this tutorial we are going to explain which steps are required to 
+implement you own `FeedbackProvider`. This provider will count the number of words
 you have used inside your articles `detailText` field. 
 
 You can either clone this project and rename/refactor
@@ -69,7 +69,7 @@ public interface WordCounterSettings {
   String getIgnoreList();
 
   /**
-   * Returns the amount of words the text should have.
+   * Returns the number of words the text should have.
    */
   Integer getTarget();
 }
@@ -78,7 +78,7 @@ public interface WordCounterSettings {
 
 ## 3. FeedbackProvider Implementation
 
-Let's take a look on the actual feedback implementation:
+Let's look on the actual feedback implementation:
 
 ```java
 @DefaultAnnotation(NonNull.class)
@@ -156,13 +156,13 @@ as settings value.
 
 For the feedback we use different redundant `FeedbackItems` here,
 just to show what components are available. The settings value `target` determines
-the amount of words our article should have and therefore can be used to 
+the number of words our article should have and therefore can be used to 
 calculate a percentage value of how far the writing is progressed.
 
 ## 4. Feedback Grouping
 
 The Feedback Hub supports the tabbed rendering of `FeedbackItems`.
-All you have to do is to use the `withCollection` method which is supported 
+All you must do is to use the `withCollection` method which is supported 
 by most `FeedbackItemBuilders`.
 For example, we could render the percentage based `FeedbackItems` on one tab
 and the number based scores on another by adding `.withCollection("tab1")` and
@@ -175,7 +175,7 @@ and the number based scores on another by adding `.withCollection("tab1")` and
 
 ## 5. Configuration
 
-We finally have to create a new `CMSettings` document
+We finally must create a new `CMSettings` document
 within a site or within the global "Feedback Hub" configuration folder. Below, you see
 an example configuration created for the Blueprint Site "Chef Corp.". 
 

@@ -1,7 +1,7 @@
 # Implementing a FeedbackAdapter 
 
-In this tutorial we will show you which steps are are required to 
-implement your own `FeedbackAdapter`. This example adapter will count the amount of words
+In this tutorial we will show you which steps are required to 
+implement your own `FeedbackAdapter`. This example adapter will count the number of words
 you have used inside your articles `detailText` field. 
 
 The implementation will use the `TextFeedbackHubAdapter` which already extracts
@@ -55,11 +55,11 @@ public class WordCounterFeedbackAdapterFactory implements FeedbackHubAdapterFact
 The class implements the interface `FeedbackHubAdapterFactory` which requires
 the implementation of the methods:
 
-- `String getId()`: this methods return the unique id of this adapter and is used
-to match the content based configuration against the actual implementation.
+- `String getId()`: this method returns the unique id of this adapter and is used
+to match the content-based configuration against the actual implementation.
 - `FeedbackHubAdapter create(T settings)`: this factory method creates the actual adapter instance.
 The settings interface that is passed here, contains additional fields that may have been set
-inside the `settings` struct of the adapter configuration. Usually credentials are passed
+inside the `settings` struct of the adapter configuration. Usually, credentials are passed
 to the adapter this way. In our example, we use this interface to pass additional 
 configuration parameters:
 
@@ -72,7 +72,7 @@ public interface WordCounterSettings {
   String getIgnoreList();
 
   /**
-   * Returns the amount of words the text should have.
+   * Returns the number of words the text should have.
    */
   Integer getTarget();
 }
@@ -125,17 +125,17 @@ exclude the words that are inside the ignore list that has been passed
 as settings value.
 
 The settings value `target` determines
-the amount of words our article should have and therefore can be used to 
+the number of words our article should have and therefore can be used to 
 calculate a percentage value of how far the writing is progressed.
 
 Note that in this implementation, the source property that is used to 
-extract the markup from, is not a hard coded value as in the `FeedbackProvider` example,
+extract the markup from, is not a hard coded value as in the `FeedbackProvider` example
 but can be configured via the settings parameter `sourceProperties`.
 
 
 ## 4. Configuration
 
-We finally have to create a new `CMSettings` document
+We finally must  create a new `CMSettings` document
 within a site or within the global "Feedback Hub" configuration folder. Below, you see
 an example configuration created for the Blueprint Site "Chef Corp.". 
 
@@ -192,7 +192,7 @@ An example for this is described in section **[Custom FeedbackItems](custom_feed
 
 ## 9. Jobs Framework
 
-In some situations it is desired to support user interaction, e.g. via buttons 
+In some situations, it is desired to support user interaction, e.g. via buttons 
 on custom Feedback panels, which should trigger actions on the server.
 The recommended way to do this, is using the Studio's jobs framework. 
 

@@ -11,7 +11,7 @@ public interface WordCounterSettings {
   String getIgnoreList();
 
   /**
-   * Returns the amount of words the text should have.
+   * Returns the number of words the text should have.
    */
   Integer getTarget();
 }

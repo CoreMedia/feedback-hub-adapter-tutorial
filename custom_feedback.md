@@ -49,7 +49,7 @@ with the text we want to render:
 
 ```java
 CursiveTextFeedbackItem myItem = new CursiveTextFeedbackItem("header", 
-  "The amount of words is counted here");
+  "The number of words is counted here");
 ```
 
 To make this example more interesting, we add the text to the reserved collection `header`, 

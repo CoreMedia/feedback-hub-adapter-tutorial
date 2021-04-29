@@ -7,7 +7,7 @@ archetypes to generate the overall structure for these new modules.
 
 For creating a new Studio plugin, you can use the following command.
 
-```
+```sh
 mvn archetype:generate \
 -DarchetypeGroupId=com.coremedia.maven \
 -DarchetypeArtifactId=studio-client-plugin-archetype \
@@ -28,7 +28,7 @@ including the overall plugin definition with its own resource bundle.
 For creating a new Java Plugin for one of the servers, 
 you can use the following command:
 
-```
+```sh
 mvn archetype:generate \
 -DarchetypeGroupId=com.coremedia.maven \
 -DarchetypeArtifactId=plugin-archetype \
@@ -37,6 +37,7 @@ mvn archetype:generate \
 -DartifactId=myplugin-studio-server \
 -Dversion=0.1.0-SNAPSHOT \
 -Dpackage=com.acme.plugins.myplugin.studio_server \
+-Dcms-version=2104.1
 ```
  
 You may want to change the `groupId`, `articfactId` and `version` here according

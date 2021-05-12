@@ -6,7 +6,7 @@ Please read the versioning section of the project to see what other CoreMedia ve
 )
 ![Status](https://img.shields.io/static/v1?message=active&label=Status&style=for-the-badge&labelColor=666666&color=2FAC66 
 "The status badge describes if the project is maintained. Possible values are active and inactive. 
-If a project is inactive it means that the development has been discontinued and won't support future CoreMedia versions."
+If a project is inactive it means that the development has been discontinued and won't support future CoreMedia versions." 
 )
 
 

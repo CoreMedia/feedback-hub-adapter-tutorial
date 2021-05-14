@@ -17,7 +17,7 @@ If a project is inactive it means that the development has been discontinued and
 In this tutorial you will learn about how to use the CoreMedia Feedback Hub API.
 It explains step-by-step how to set up a new CoreMedia Extension for the Feedback Hub
 and how to build a new Feedback Hub adapter or provider with the
-corresponding classes, localization, error handling, etc..
+corresponding classes, localization, error handling, etc.
 
 ## Versioning
 

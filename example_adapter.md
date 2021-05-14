@@ -1,6 +1,6 @@
 # Implementing a FeedbackAdapter 
 
-In this tutorial we will show you which steps are required to 
+In this tutorial you will learn which steps are required to 
 implement your own `FeedbackAdapter`. This example adapter will count the number of words
 you have used inside your articles `detailText` field. 
 
@@ -14,7 +14,7 @@ In any case, we assume that the `studio-server` and `studio-client` modules have
 
 ## 1. Spring Configuration
 
-Assuming you haven't already done it, create a `resource` folder inside your
+Assuming you have not already done it, create a `resource` folder inside your
 `studio-server` maven module with the corresponding `resources/plugin.properties` file
 which points to you Spring configuration class. In our example, this class is 
 named `WordCounterConfiguration` and looks like this:
@@ -172,13 +172,13 @@ an additional tab with your Feedback Hub adapter:
 
 The localization of the Feedback Hub does not differ between
 implementations of `FeedbackAdapter` and `FeedbackProvider`. 
-It is described in detail in section **[Localization](feedback_localization.md)**.
+You can find a detailed description in the section **[Localization](feedback_localization.md)**.
 
 ## 6. Exception Handling
 
 The overall exception handling inside the Feedback Hub does not differ between
 implementations of `FeedbackAdapter` and `FeedbackProvider`. 
-It is described in detail in section **[Error Handling](error_handling.md)**.
+You can find a detailed description in the section **[Error Handling](error_handling.md)**.
 
 ## 7. Predefined FeedbackItems
 

@@ -5,7 +5,7 @@ archetypes to generate the overall structure for these new modules.
 
 ## Creating a Studio Client Plugin
 
-For creating a new Studio plugin, you can use the following command.
+For creating a new Studio plugin, you can use the following command:
 
 ```sh
 mvn archetype:generate \
@@ -26,7 +26,7 @@ including the overall plugin definition with its own resource bundle.
 ## Creating a Plugin for Java Applications
 
 For creating a new Java Plugin for one of the servers, 
-you can use the following command:
+you can use the following command: 
 
 ```sh
 mvn archetype:generate \

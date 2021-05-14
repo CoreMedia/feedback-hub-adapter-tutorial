@@ -48,7 +48,7 @@ Tutorial Link: **[Implementing a FeedbackAdapter](example_adapter.md)**
 
 The `FeedbackProvider` interface is the general interface to implement for any
 kind of feedback. It does not offer any kind of prefabrication and can be used
-if none of the existing `FeedbackHubAdapters` are applicable for your usecase.
+if none of the existing `FeedbackHubAdapters` are applicable for your use case.
 
 Tutorial Link: **[Implementing a FeedbackProvider](example_provider.md)**
 

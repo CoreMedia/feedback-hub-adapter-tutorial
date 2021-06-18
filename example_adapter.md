@@ -10,7 +10,7 @@ text from content.
 You can either clone this project and rename/refactor
 the corresponding classes and methods or you can 
 **[start from scratch by using archetypes](archetypes.md)**.
-In any case, we assume that the `studio-server` and `studio-client` modules have been setup properly.
+In any case, we assume that the `studio-server` and `studio-client` modules have been set up properly.
 
 ## 1. Spring Configuration
 
@@ -35,7 +35,7 @@ which is responsible for creating the actual `FeedbackAdapter` instance.
 
 ## 2. FeedbackHubAdapterFactory Implementation
 
-Next, we take a closer look on the `WordCounterFeedbackAdapterFactory`.
+Next, inspect the `WordCounterFeedbackAdapterFactory`.
 
 ```java
 public class WordCounterFeedbackAdapterFactory implements FeedbackHubAdapterFactory<WordCounterSettings> {
@@ -119,8 +119,8 @@ public class WordCounterFeedbackAdapter implements TextFeedbackHubAdapter {
 ```
 
 
-We use the `TextFeedbackHubAdapter` which extracts the markup as plaintext from the content for us.
-We then split the plaintext using whitespaces, but also
+The `TextFeedbackHubAdapter` extracts the markup as plaintext from the content.
+You then must split the plaintext using whitespaces, but also
 exclude the words that are inside the ignore list that has been passed 
 as settings value.
 
@@ -135,7 +135,7 @@ but can be configured via the settings parameter `sourceProperties`.
 
 ## 4. Configuration
 
-We finally must  create a new `CMSettings` document
+Finally, you must create a new `CMSettings` document
 within a site or within the global "Feedback Hub" configuration folder. Below, you see
 an example configuration created for the Blueprint Site "Chef Corp.". 
 
@@ -192,7 +192,7 @@ An example for this is described in section **[Custom FeedbackItems](custom_feed
 
 ## 9. Jobs Framework
 
-In some situations, it is desired to support user interaction, e.g. via buttons 
+In some situations, it is desired to support user interaction, for example via buttons 
 on custom Feedback panels, which should trigger actions on the server.
 The recommended way to do this, is using the Studio's jobs framework. 
 

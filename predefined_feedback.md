@@ -1,7 +1,7 @@
 # Predefined FeedbackItems
 
 This section shows an overview of existing components for `FeedbackItem`.
-These can be used when implementing an own feedback adapter or provider.
+These can be used when implementing your own feedback adapter or provider.
 
 ### Score Bar
 
@@ -101,10 +101,10 @@ __Builder Class:__ ComparingScoreBarFeedbackItemBuilder
 | maxValue1         | float    | -      | The maximum value of the 1st score bar. |
 | targetValue1      | float    | -      | The target value of the 1st score bar. |
 | color1            | String   | -      | The color the 1st score bar should be rendered with. If set, the _reverseColor_ attribute will be ignored. |
-| value2            | float    | 0      | The value of the 2st score bar. |
-| maxValue2         | float    | -      | The maximum value of the 2st score bar. |
-| targetValue2      | float    | -      | The target value of the 2st score bar. |
-| color2            | String   | -      | The color the 2st score bar should be rendered with. If set, the _reverseColor_ attribute will be ignored. |
+| value2            | float    | 0      | The value of the 2nd score bar. |
+| maxValue2         | float    | -      | The maximum value of the 2nd score bar. |
+| targetValue2      | float    | -      | The target value of the 2nd score bar. |
+| color2            | String   | -      | The color the 2nd score bar should be rendered with. If set, the _reverseColor_ attribute will be ignored. |
 
 
 ### External Link
@@ -137,7 +137,7 @@ __Builder Class:__ LabelFeedbackItemBuilder
 ### Empty Panel
 
 This panel is only used for creating empty tabs in case the feedback is not available during the first rendering.
-They are mostly used only internally, but can be created through the _FeedbackItemFactory_.
+In general, they are only used internally but can be created through the _FeedbackItemFactory_.
 
 | Property          | Type     | Default Value | Description |
 | ----------------- | :------: | :------------: |------------ |

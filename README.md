@@ -56,10 +56,10 @@ Tutorial Link: **[Implementing a FeedbackProvider](example_provider.md)**
 ## Getting Started
 
 This repository is a plugin for the CoreMedia Blueprint workspace.
-To include it, perform the following steps:
+To include it, you must perform the following steps:
 
-- clone this project
-- build it via `mvn clean install`
+- Clone this project
+- Build it via `mvn clean install`
 
 
 #### Studio Server Development

@@ -1,12 +1,12 @@
 # Custom FeedbackItems
 
 This section describes how to implement a custom `FeedbackItem`.
-To keep the example simple, we create a new `FeedbackItem` that allows us 
+To keep the example simple, we created a new `FeedbackItem` that allows us 
 to render text with a cursive font.
 
 ## Java Implementation
 
-All we have to do, is to implement the interface `FeedbackItem` for this:
+All you have to do, is to implement the interface `FeedbackItem` in terms of:
 
 ```java
 public class CursiveTextFeedbackItem implements FeedbackItem {
@@ -39,28 +39,28 @@ public class CursiveTextFeedbackItem implements FeedbackItem {
 }
 ```
 
-The interface does not require the implementation of any methods, but we
+The interface does not require the implementation of any methods, but you can
 override the `getType` method to have a simpler type name than the actual class name.
-Also, we provide the possibility to add the `FeedbackItem` to a specific collection
+Also, you can provide the possibility to add the `FeedbackItem` to a specific collection
 by overriding the `getCollection` method.
 
-Within our provider or adapter, we can create a new `CursiveTextFeedbackItem` 
-with the text we want to render:
+Within your provider or adapter, you can now create a new `CursiveTextFeedbackItem` 
+with the text you want to render:
 
 ```java
 CursiveTextFeedbackItem myItem = new CursiveTextFeedbackItem("header", 
   "The number of words is counted here");
 ```
 
-To make this example more interesting, we add the text to the reserved collection `header`, 
+To make this example more interesting, the text was added to the reserved collection `header`, 
 which means that it will be rendered immediately after the title and before the sub tabs.
 
 ## AS/MXML Implementation
 
-On the client site, we have to implement the component that should render
+On the client site, you must implement the component that should render
 the new `FeedbackItem` type.
 
-First, we have to implement a sub-component of class `FeedbackItemPanel`:
+First, you must implement a sub-component of the class `FeedbackItemPanel`:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -123,8 +123,7 @@ For this, we use the `initialize` method of our `FeedbackHubWordCounterStudioPlu
   ...
 ```
 
-Note that the value `cursiveText` matches the `getType` methods return value of
-our `CursiveTextFeedbackItem.java`. Within our provide example, the label 
+Note that the value `cursiveText` matches the `getType` methods return value of `CursiveTextFeedbackItem.java`. For the provided example, the label 
 would be rendered like this:
 
 

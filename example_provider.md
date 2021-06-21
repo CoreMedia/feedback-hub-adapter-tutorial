@@ -1,19 +1,19 @@
 # Implementing a FeedbackProvider 
 
-In this tutorial we are going to explain which steps are required to 
+In this tutorial you will learn which steps are required to 
 implement you own `FeedbackProvider`. This provider will count the number of words
 you have used inside your articles `detailText` field. 
 
 You can either clone this project and rename/refactor
 the corresponding classes and methods or you can 
 **[start from scratch by using archetypes](archetypes.md)**.
-In any case, we assume that the `studio-server` and `studio-client` modules have been setup properly.
+In any case, it is assumed that the `studio-server` and `studio-client` modules have been setup properly.
 
 ## 1. Spring Configuration
 
-Assuming you haven't already done it, create a `resource` folder inside your
+Anticipating that you have not already done it, create a `resource` folder inside your
 `studio-server` maven module with the corresponding `resources/plugin.properties` file
-which points to you Spring configuration class. In our example, this class is 
+which points to your Spring configuration class. In our example, this class is 
 named `WordCounterConfiguration` and looks like this:
 
 ```java
@@ -32,7 +32,7 @@ which is responsible for creating the actual `FeedbackProvider` instance.
 
 ## 2. FeedbackProviderFactory Implementation
 
-Next, we take a closer look on the `WordCounterFeedbackProviderFactory`.
+Next, take a closer look at the `WordCounterFeedbackProviderFactory`.
 
 ```java
 public class WordCounterFeedbackProviderFactory implements FeedbackProviderFactory<WordCounterSettings> {
@@ -52,8 +52,8 @@ public class WordCounterFeedbackProviderFactory implements FeedbackProviderFacto
 The class implements the interface `FeedbackProviderFactory` which requires
 the implementation of the methods 
 
-- `String getId()`: this methods return the unique id of this adapter and is used
-to match the content based configuration against the actual implementation
+- `String getId()`: this method returns the unique id of this adapter and is used
+to match the content-based configuration against the actual implementation
 - `FeedbackProvider create(T settings)`: this factory method creates the actual provider instance.
 The settings interface that is passed here contains additional fields that may have been set
 inside the `settings` struct of the adapter configuration. Usually credentials are passed
@@ -78,7 +78,7 @@ public interface WordCounterSettings {
 
 ## 3. FeedbackProvider Implementation
 
-Let's look on the actual feedback implementation:
+In the next step, check the actual feedback implementation settings:
 
 ```java
 @DefaultAnnotation(NonNull.class)
@@ -149,24 +149,24 @@ public class WordCounterFeedbackProvider implements FeedbackProvider {
 }
 ```
 
-In this example, we extract the markup from the content,
-convert it to plaintext and split the text using whitespaces. 
-We also exclude the words that are inside the ignore list that has been passed 
-as settings value.
+In this example, the markup is extracted from the content,
+converted to plaintext and the text is split using whitespaces. 
+Also, the words that are inside the ignore list that has been passed 
+as settings value are excluded.
 
-For the feedback we use different redundant `FeedbackItems` here,
+For the feedback, different redundant `FeedbackItems` are used,
 just to show what components are available. The settings value `target` determines
-the number of words our article should have and therefore can be used to 
+the number of words the article must have and therefore this can be used to 
 calculate a percentage value of how far the writing is progressed.
 
 ## 4. Feedback Grouping
 
 The Feedback Hub supports the tabbed rendering of `FeedbackItems`.
-All you must do is to use the `withCollection` method which is supported 
+All you must do is use the `withCollection` method which is supported 
 by most `FeedbackItemBuilders`.
-For example, we could render the percentage based `FeedbackItems` on one tab
-and the number based scores on another by adding `.withCollection("tab1")` and
-`.withCollection("tab2")` to the corresponding builders. The result would look like this:
+For example, you could render the percentage based `FeedbackItems` on one tab
+and the number-based scores on another by adding `.withCollection("tab1")` and
+`.withCollection("tab2")` to the corresponding builders. The result will look like this:
 
 
 ![Feedback Tabs](images/provider_tabbed_1.png "Feedback Tabs")
@@ -175,7 +175,7 @@ and the number based scores on another by adding `.withCollection("tab1")` and
 
 ## 5. Configuration
 
-We finally must create a new `CMSettings` document
+Finally, you must create a new `CMSettings` document
 within a site or within the global "Feedback Hub" configuration folder. Below, you see
 an example configuration created for the Blueprint Site "Chef Corp.". 
 
@@ -203,7 +203,7 @@ an example configuration created for the Blueprint Site "Chef Corp.".
 ```
 
 If everything is configured properly, the Feedback Hub window will have
-an additional tab with your Feedback Hub provider:
+an additional tab within your Feedback Hub provider:
 
 ![Feedback Rendering](images/feedback_example_1.png "Feedback Rendering")
 
@@ -231,8 +231,8 @@ An example for this is described in section **[Custom FeedbackItems](custom_feed
 
 ## 10. Jobs Framework
 
-In some situations it is desired to support user interaction, e.g. via buttons 
-on custom Feedback panels, which should trigger actions on the server.
-The recommended way to do this, is using the Studio's jobs framework. 
+In some situations, it may be useful to support user interaction, for example by means of buttons 
+on customized Feedback panels, which can trigger actions on the server.
+The recommended way to do this, is using the Studio's Jobs Framework. 
 
 An example for this is described in section **[Jobs Framework](jobs_framework.md)**.

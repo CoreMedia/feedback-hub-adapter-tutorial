@@ -182,7 +182,7 @@ You can find a detailed description in the section **[Error Handling](error_hand
 
 ## 7. Predefined FeedbackItems
 
-The list of predefined components for `FeedbackItems` is listed here: **[Predefined FeedbackItems](predefined_feedback.md)**.
+The list of predefined components for `FeedbackItems` is available here: **[Predefined FeedbackItems](predefined_feedback.md)**.
 
 ## 8. Custom FeedbackItems
 

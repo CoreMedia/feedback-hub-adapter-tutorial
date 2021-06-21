@@ -193,7 +193,7 @@ An example for this is described in section **[Custom FeedbackItems](custom_feed
 ## 9. Jobs Framework
 
 In some situations, it is desired to support user interaction, for example via buttons 
-on custom Feedback panels, which should trigger actions on the server.
-The recommended way to do this, is using the Studio's jobs framework. 
+on custom Feedback panels, which can trigger actions on the server.
+The recommended way to do this, is using the Studio's Jobs Framework. 
 
 An example for this is described in section **[Jobs Framework](jobs_framework.md)**.

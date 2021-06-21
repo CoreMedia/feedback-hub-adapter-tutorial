@@ -1,13 +1,13 @@
 # Jobs Framework
 
-This sections gives a brief example on how to implement a job with the Studio's jobs framework. 
+This section gives a brief example on how to implement a job with the Studio's jobs framework. 
 Additional documentation about this can be found 
 in the _Studio Developer Manual_ at https://www.coremedia.com/en/services/downloads.
 
 ## Implementing the Studio Client
 
-To implement a job, we have to know the name, type and parameters of it. 
-We use this data to trigger a generic job via the _jobService_. 
+To implement a job, you must know the name, type and basic parameters. 
+This data is used to trigger a generic job via the _jobService_. 
 Generic jobs have the advantage that they are not 
 automatically being visualized within the job window of the Studio.
 
@@ -34,7 +34,7 @@ automatically being visualized within the job window of the Studio.
 
 ## Implementing the Studio Server
 
-To create a new job definition, we need two classes: the _JobFactory_ and the 
+Creating a new job definition requires two classes: the _JobFactory_ and the 
 actual _Job_.
 
 ```java
@@ -58,8 +58,8 @@ public class MyJobFactory implements JobFactory {
 
 The _JobFactory_ simply checks if the given job type is matching and allows
 to parameterize the new job instance with other Spring bean instances.
-For the sake of simplicity, our _MyJob_ does not have any constructor parameters, but
-additional services, like the _SitesService_ could be passed here.
+For the sake of simplicity, _MyJob_ does not have any constructor parameters, but
+additional services, like the _SitesService_ can be passed here.
 
 ```java
 public class MyJob implements Job {

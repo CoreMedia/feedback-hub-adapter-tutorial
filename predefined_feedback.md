@@ -11,7 +11,7 @@ __Builder Class:__ ScoreBarFeedbackItemBuilder
 
 | Property          | Type     | Default Value | Description |
 | ----------------- | :------: | :------------: |------------ |
-| collection        | String   | -      | The tab the panel should be rendered too. |
+| collection        | String   | -      | The tab the panel should be rendered, too. |
 | title             | String   | -      | The title of the panel. |
 | help              | String   | -      | The help text to be rendered as tooltip for a help icon. |
 | label             | String   | -      | The label that is shown above the bar. |
@@ -31,7 +31,7 @@ __Builder Class:__ RatingBarFeedbackItemBuilder
 
 | Property          | Type     | Default Value | Description |
 | ----------------- | :------: | :------------: |------------ |
-| collection        | String   | -      | The tab the panel should be rendered too. |
+| collection        | String   | -      | The tab the panel should be rendered, too. |
 | title             | String   | -      | The title of the panel. |
 | help              | String   | -      | The help text to be rendered as tooltip for a help icon. |
 | label             | String   | -      | The label that is shown above the bar. |
@@ -67,7 +67,7 @@ __Builder Class:__ GaugeFeedbackItemBuilder
 
 | Property          | Type     | Default Value | Description |
 | ----------------- | :------: | :------------: |------------ |
-| collection        | String   | -      | The tab the panel should be rendered too. |
+| collection        | String   | -      | The tab the panel should be rendered, too. |
 | title             | String   | -      | The title of the panel. |
 | help              | String   | -      | The help text to be rendered as tooltip for a help icon. |
 | label             | String   | -      | The label that is shown above the bar. |
@@ -88,7 +88,7 @@ __Builder Class:__ ComparingScoreBarFeedbackItemBuilder
 
 | Property          | Type     | Default Value | Description |
 | ----------------- | :------: | :------------: |------------ |
-| collection        | String   | -      | The tab the panel should be rendered too. |
+| collection        | String   | -      | The tab the panel should be rendered, too. |
 | title             | String   | -      | The title of the panel. |
 | help              | String   | -      | The help text to be rendered as tooltip for a help icon. |
 | label             | String   | -      | The label that is shown above the bar. |

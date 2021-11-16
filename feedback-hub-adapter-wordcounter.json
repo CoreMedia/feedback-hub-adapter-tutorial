@@ -7,4 +7,5 @@
     "studio-client.main": {
       "file": "studio-client/apps/main/feedback-hub-adapter-wordcounter/build/studio-client.main.feedback-hub-adapter-wordcounter-${VERSION}.zip"
     }
+  }
 }

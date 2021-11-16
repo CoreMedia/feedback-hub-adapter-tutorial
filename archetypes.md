@@ -16,7 +16,7 @@ mvn archetype:generate \
 -DartifactId=myplugin-studio-client \
 -Dversion=0.1.0-SNAPSHOT \
 -Dpackage=com.acme.plugins.myplugin.studio_client \
--Dcms-version=2104.1
+-Dcms-version=2107.3
 ```
 
 You may want to change the `groupId`, `articfactId` and `version` here according

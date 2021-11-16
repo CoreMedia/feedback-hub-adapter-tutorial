@@ -25,7 +25,7 @@ To find out which CoreMedia versions are supported by this project,
 please take look at the releases section or on the existing branches. 
 To find the matching version of your CoreMedia system, please checkout the branch 
 with the corresponding name. For example, 
-if your CoreMedia version is 2104.1, checkout the branch 2104.1.
+if your CoreMedia version is 2107.1, checkout the branch 2107.1.
 
 
 

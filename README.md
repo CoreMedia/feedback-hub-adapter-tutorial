@@ -12,8 +12,6 @@ If a project is inactive it means that the development has been discontinued and
 
 # Displaying Feedback with the CoreMedia Feedback Hub 
 
-## Overview 
-
 In this tutorial you will learn about how to use the CoreMedia Feedback Hub API.
 It explains step-by-step how to set up a new CoreMedia Extension for the Feedback Hub
 and how to build a new Feedback Hub adapter or provider with the
@@ -42,7 +40,7 @@ is the `BlobKeywordsFeedbackHubAdapter` which already gives us the data blob the
 should be extracted from. Please check the documentation for the list of existing
 `FeedbackHubAdapters`. 
 
-Tutorial Link: **[Implementing a FeedbackAdapter](example_adapter.md)**
+Tutorial Link: **[Implementing a FeedbackAdapter](docs/example_adapter.md)**
 
 **FeedbackProvider**
 
@@ -50,7 +48,7 @@ The `FeedbackProvider` interface is the general interface to implement for any
 kind of feedback. It does not offer any kind of prefabrication and can be used
 if none of the existing `FeedbackHubAdapters` are applicable for your use case.
 
-Tutorial Link: **[Implementing a FeedbackProvider](example_provider.md)**
+Tutorial Link: **[Implementing a FeedbackProvider](docs/example_provider.md)**
 
 
 ## Getting Started
@@ -78,7 +76,7 @@ host `localhost` and port `8000`. The VM parameter should look like this:
 
 In IDEA, it should look like this:
 
-![Feedback Rendering](images/debugging.png "IDEA Debug Configuration")
+![Feedback Rendering](docs/images/debugging.png "IDEA Debug Configuration")
 
 When executed, the Studio server will start up and you will be able to 
 debug your plugin.

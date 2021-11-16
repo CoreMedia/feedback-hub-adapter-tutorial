@@ -4,9 +4,8 @@ In this tutorial you will learn which steps are required to
 implement you own `FeedbackProvider`. This provider will count the number of words
 you have used inside your articles `detailText` field. 
 
-You can either clone this project and rename/refactor
-the corresponding classes and methods or you can 
-**[start from scratch by using archetypes](archetypes.md)**.
+You can clone this project and rename/refactor
+the corresponding classes and methods.
 In any case, it is assumed that the `studio-server` and `studio-client` modules have been setup properly.
 
 ## 1. Spring Configuration

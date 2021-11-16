@@ -3,17 +3,14 @@
 When implementing a feedback source, an additional Studio Extension is required
 to provide at least a resource bundle that is used to localize error messages and feedback labels.
 
-Inside the Studio plugin `FeedbackHubWordCounterStudioPlugin.mxml`, copy your own resource bundle to the
-`com.coremedia.cms.studio.feedbackhub.FeedbackHub` bundle: 
+Inside the `configuration` section the Studio plugin `FeedbackHubWordCounterStudioPlugin.ts`, copy your own resource bundle to the
+`FeedbackHub` bundle: 
 
-```xml
-<editor:configuration>
-  <editor:CopyResourceBundleProperties
-        destination="{ResourceManager.getInstance().getResourceBundle(null, 
-            'com.coremedia.cms.studio.feedbackhub.FeedbackHub')}"
-        source="{ResourceManager.getInstance().getResourceBundle(null, 
-            'com.coremedia.labs.plugins.feedbackhub.wordcounter.FeedbackHubWordCounterStudioPlugin')}"/>
-</editor:configuration>
+```ts
+new CopyResourceBundleProperties({
+  destination: resourceManager.getResourceBundle(null, FeedbackHub_properties),
+  source: resourceManager.getResourceBundle(null, FeedbackHubWordCounterStudioPlugin_properties),
+}),
 ```
 
 ## Main Tab Localization
@@ -22,11 +19,11 @@ For the localization of the main tab, you must use the `factoryId` of your adapt
 or provider and append the suffixes `iconCls`, `title`, `tooltip` and `ariaLabel`
 for the corresponding component attributes:
 
-```
-wordCountProvider_iconCls=Resource(key='pencil', bundle='com.coremedia.icons.CoreIcons')
-wordCountProvider_title=Word Counter
-wordCountProvider_tooltip=See how many words you have written
-wordCountProvider_ariaLabel=Word Counter
+```json
+wordCountProvider_iconCls: CoreIcons_properties.pencil,
+wordCountProvider_title: "Word Counter",
+wordCountProvider_tooltip: "See how many words you have written",
+wordCountProvider_ariaLabel: "Word Counter",
 ```
 
 ![Tab Localization](images/feedback_tab.png "Tab Localization")
@@ -41,14 +38,14 @@ can be provided in a similar way as for the main tab. The required format is
 `<factoryId>_<collection>_tab_<labelType>`. Below you see an example that is 
 used for the provider implementation:
 
-```
-wordCountProvider_tab1_tab_title = Percentage
-wordCountProvider_tab1_tab_tooltip = Percentage Values 
-wordCountProvider_tab1_tab_ariaLabel = Percentage Values
+```json
+wordCountProvider_tab1_tab_title: "Percentage",
+wordCountProvider_tab1_tab_tooltip: "Percentage Values",
+wordCountProvider_tab1_tab_ariaLabel: "Percentage Values",
 
-wordCountProvider_tab2_tab_title = Count
-wordCountProvider_tab2_tab_tooltip = Counted Values 
-wordCountProvider_tab2_tab_ariaLabel = Counted Values
+wordCountProvider_tab2_tab_title: "Count",
+wordCountProvider_tab2_tab_tooltip: "Counted Values",
+wordCountProvider_tab2_tab_ariaLabel: "Counted Values",
 ```
 
 A localized provider looks like this:
@@ -59,7 +56,7 @@ A localized provider looks like this:
 
 For the labels and titles that are used for `FeedbackItems`, the Feedback
 Hub will always try to look up the corresponding value from 
-the `com.coremedia.cms.studio.feedbackhub.FeedbackHub` resource bundle.
+the `FeedbackHub_properties.ts` resource bundle.
 For example, you can pass "word_count_label" as label value for the score bar: 
 
 ```java
@@ -70,8 +67,8 @@ ScoreBarFeedbackItem scoreBar = ScoreBarFeedbackItem.builder()
         .build();
 ```
 
-Then, provide a localized value for this `String` within your 
-`com.coremedia.labs.plugins.feedback.wordcounter.FeedbackHubWordCounterStudioPlugin` resource bundle.
+Then, provide a localized value for this `string` within your 
+`FeedbackHubWordCounterStudioPlugin_properties.ts` resource bundle.
 
 ```
 word_count_label = Word Count

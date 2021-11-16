@@ -25,16 +25,16 @@ the error message. For example you could wrap your provider implementation
 into one big `try/catch` block:
 
 ```java
-  @Override
-  public CompletionStage<Collection<FeedbackItem>> provideFeedback(FeedbackContext feedbackContext) {
-    try {
-      ...
-    }
-    catch (Exception e) {
-      throw new FeedbackHubException("Error in WordCounter", WORD_COUNTER_COMMON_ERROR_CODE, 
-        Arrays.asList(e.getMessage()));
-    }
+@Override
+public CompletionStage<Collection<FeedbackItem>> provideFeedback(FeedbackContext feedbackContext) {
+  try {
+    ...
   }
+  catch (Exception e) {
+    throw new FeedbackHubException("Error in WordCounter", WORD_COUNTER_COMMON_ERROR_CODE, 
+      Arrays.asList(e.getMessage()));
+  }
+}
 ```
 You can also use this to show configuration errors to the user.
 
@@ -53,13 +53,13 @@ configured since otherwise, the graph calculation will fail:
 ```java
 @Override
 public FeedbackProvider create(WordCounterSettings settings) {
-    Integer target = settings.getTarget();
-    if (target == null || target <= 0) {
-      throw new FeedbackHubException("settings must provide a target", 
-        WordCounterFeedbackHubErrorCode.TARGET_NOT_SET);
-    }
-    
-    return new WordCounterFeedbackProvider(settings);
+  Integer target = settings.getTarget();
+  if (target == null || target <= 0) {
+    throw new FeedbackHubException("settings must provide a target", 
+      WordCounterFeedbackHubErrorCode.TARGET_NOT_SET);
+  }
+  
+  return new WordCounterFeedbackProvider(settings);
 }
 ```
 
@@ -68,14 +68,14 @@ public FeedbackProvider create(WordCounterSettings settings) {
 When thrown, `FeedbackHubExceptions` are serialized and sent to the client.
 The error code is used to localize the error code with its arguments.
 
-Error messages have the format `<factoryId_ERROR_CODE>=...`.
+Error messages have the format `<factoryId_ERROR_CODE>: "..."`.
 To localize the `WORD_COUNTER_COMMON_ERROR_CODE` and `TARGET_NOT_SET` error, add
-the following line to the `FeedbackHubWordCounterStudioPlugin.properties` of
+the following line to the `FeedbackHubWordCounterStudioPlugin_properties.ts` of
 the `studio-client` module:
 
 ```
-wordCountProvider_WORD_COUNTER_COMMON_ERROR_CODE = An error occurred during the execution of {0}: {1}
-wordCountProvider_TARGET_NOT_SET = 'target' property not set for adapter {0}
+wordCountProvider_WORD_COUNTER_COMMON_ERROR_CODE : "An error occurred during the execution of {0}: {1}"
+wordCountProvider_TARGET_NOT_SET : "'target' property not set for adapter {0}"
 ```
 
 Note that the first message contains two placeholders, although you only passed

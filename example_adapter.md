@@ -7,9 +7,8 @@ you have used inside your articles `detailText` field.
 The implementation will use the `TextFeedbackHubAdapter` which already extracts
 text from content. 
 
-You can either clone this project and rename/refactor
-the corresponding classes and methods or you can 
-**[start from scratch by using archetypes](archetypes.md)**.
+You can clone this project and rename/refactor
+the corresponding classes and methods.
 In any case, we assume that the `studio-server` and `studio-client` modules have been set up properly.
 
 ## 1. Spring Configuration

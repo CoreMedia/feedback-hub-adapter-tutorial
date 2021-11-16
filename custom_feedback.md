@@ -62,29 +62,24 @@ the new `FeedbackItem` type.
 
 First, you must implement a sub-component of the class `FeedbackItemPanel`:
 
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<feedbackhub:FeedbackItemPanel xmlns:fx="http://ns.adobe.com/mxml/2009"
-                               xmlns="exml:ext.config"
-                               xmlns:exml="http://www.jangaroo.net/exml/0.8"
-                               xmlns:feedbackhub="exml:com.coremedia.cms.studio.feedbackhub.config">
-  <fx:Metadata>
-    [ResourceBundle('com.coremedia.cms.studio.feedbackhub.FeedbackHub')]
-  </fx:Metadata>
-  <fx:Script><![CDATA[
-    import com.coremedia.ui.skins.DisplayFieldSkin;
+```ts
+class CursiveTextFeedbackItem extends FeedbackItemPanel {
+  declare Config: CursiveTextFeedbackItemConfig;
 
-    public static const xtype:String = "com.coremedia.cms.studio.feedbackhub.config.cursiveTextFeedbackItem";
+  static override readonly xtype: string = "com.coremedia.cms.studio.feedbackhub.config.cursiveTextFeedbackItem";
 
-    private var config:CursiveTextFeedbackItem;
+  constructor(config: Config<CursiveTextFeedbackItem> = null) {
+    super(ConfigUtils.apply(Config(CursiveTextFeedbackItem, {
 
-    public native function CursiveTextFeedbackItem(config:CursiveTextFeedbackItem = null);
-    ]]></fx:Script>
-
-  <feedbackhub:items>
-    <DisplayField ui="{DisplayFieldSkin.ITALIC.getSkin()}" value="{getLabel(config.feedbackItem['text'])}" />
-  </feedbackhub:items>
-</feedbackhub:FeedbackItemPanel>
+      items: [
+        Config(DisplayField, {
+          ui: DisplayFieldSkin.ITALIC.getSkin(),
+          value: config.feedbackItem["text"],
+        }),
+      ],
+    }), config));
+  }
+}
 ```
 
 Our example only contains a `DisplayField` which renders the `CursiveTextFeedbackItem` property `text`.
@@ -95,32 +90,33 @@ and returns the localized label instead of using the original text.
 We finally have to tell the Feedback Hub about this panel by using the `feedbackService` instance.
 For this, we use the `initialize` method of our `FeedbackHubWordCounterStudioPlugin`:
 
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<editor:StudioPlugin
-        xmlns:fx="http://ns.adobe.com/mxml/2009"
-        xmlns:exml="http://www.jangaroo.net/exml/0.8"
-        xmlns="exml:ext.config"
-        xmlns:editor="exml:com.coremedia.cms.editor.sdk.config">
-  <fx:Metadata>
-    [ResourceBundle('com.coremedia.labs.plugins.feedback.wordcounter.FeedbackHubWordCounterStudioPlugin')]
-  </fx:Metadata>
-  <fx:Script><![CDATA[
-    import com.coremedia.cms.studio.feedbackhub.feedbackService;
+```ts
+class FeedbackHubWordCounterStudioPlugin extends StudioPlugin {
+        declare Config: FeedbackHubWordCounterStudioPluginConfig;
 
-    import mx.resources.ResourceManager;
+        constructor(config: Config<FeedbackHubWordCounterStudioPlugin> = null) {
+  super((()=>{
+    this.#__initialize__(config);
+    return ConfigUtils.apply(Config(FeedbackHubWordCounterStudioPlugin, {
 
-    private var config:FeedbackHubWordCounterStudioPlugin;
+    rules: [
+    ],
+  
+    configuration: [
+      new CopyResourceBundleProperties({
+        destination: resourceManager.getResourceBundle(null, FeedbackHub_properties),
+        source: resourceManager.getResourceBundle(null, FeedbackHubWordCounterStudioPlugin_properties),
+      }),
+    ],
 
-    public native function FeedbackHubWordCounterStudioPlugin(config:FeedbackHubWordCounterStudioPlugin = null);
+  }), config);
+  })());
+  }
 
-    private function __initialize__(config:FeedbackHubWordCounterStudioPlugin):void {
-      feedbackService.registerFeedbackItemPanel("cursiveText", CursiveTextFeedbackItem({}));
-    }
-    ]]></fx:Script>
-
-  <editor:rules>
-  ...
+  #__initialize__(config: Config<FeedbackHubWordCounterStudioPlugin>): void {
+    feedbackService._.registerFeedbackItemPanel("cursiveText", Config(CursiveTextFeedbackItem));
+  }
+}
 ```
 
 Note that the value `cursiveText` matches the `getType` methods return value of `CursiveTextFeedbackItem.java`. For the provided example, the label 

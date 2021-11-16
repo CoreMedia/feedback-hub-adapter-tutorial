@@ -12,6 +12,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <cm.studio-server.core.version>2110.1-pr3</cm.studio-server.core.version>
+    <cm.common.core.version>2110.1-pr3</cm.common.core.version>
   </properties>
 
   <repositories>
@@ -53,7 +54,7 @@
       <dependency>
         <groupId>com.coremedia.cms</groupId>
         <artifactId>common-core-bom</artifactId>
-        <version>${cm.studio-server.core.version}</version>
+        <version>${cm.common.core.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>

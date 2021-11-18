@@ -84,27 +84,7 @@ debug your plugin.
 
 #### Studio Client Development
 
-- When you have a CoreMedia test system where the Java module of this plugin is already deployed
-or this plugin does not have any Java plugin modules, just invoke the following command
-from the root directory of your CoreMedia Blueprint workspace: 
-
-```
-mvn jangaroo:run -pl :studio-resources -Dinstallation.host=<YOUR_TEST_SYSTEM_HOST>
-```
-
-- If you want to use your local Studio server, start the Studio server
-and invoke the following command from the root directory of the CoreMedia Blueprint workspace:
-
-```
-mvn jangaroo:run -pl :studio-resources -DadditionalPackagesDirs=<BASE_DIR>/feedback-hub-adapter-tutorial/studio-client/target/app
-```
-
-The parameter `installation.host` is not required here, since we are working 
-with a local Studio server. Note that the parameter `additionalPackagesDirs` accepts 
-multiple folders from different apps in a comma separated format.
-This allows you to develop multiple plugins in parallel.
-
-Finally, login to the Studio at URL http://localhost:8080.
+TODO
     
 
 ## CoreMedia Labs

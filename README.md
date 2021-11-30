@@ -84,7 +84,16 @@ debug your plugin.
 
 #### Studio Client Development
 
-TODO
+The Studio client development for plugins is similar to the regular Studio
+development. Ensure that the Studio proxy is started for the main Studio.
+
+Afterwards, execute
+
+`pnpm -r start` 
+
+in the __studio-client__ folder of your plugin. You will see that a proxy
+server is started under which the Studio is available. The additional Studio
+sources of the plugin will be available there.
     
 
 ## CoreMedia Labs
